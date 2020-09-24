@@ -20,6 +20,8 @@ import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
 import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.example.aplikacjakurierska.user.Kontakt;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class HomeFragment extends Fragment {
 
@@ -27,11 +29,17 @@ public class HomeFragment extends Fragment {
 Button bDodajp;
 Button bKontakt;
 Button bWyloguj;
+TextView mail;
+    private FirebaseAuth mAuth;
+        FirebaseUser firebaseUser;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
        final View root = inflater.inflate(R.layout.fragment_home, container, false);
+        mAuth = FirebaseAuth.getInstance();
+        firebaseUser= mAuth.getCurrentUser();
+
 
         bDodajp=root.findViewById(R.id.bZnajdzPrzes);
 
@@ -62,17 +70,25 @@ Button bWyloguj;
             @Override
             public void onClick(View v) {
 
-                String text = "Zostałeś wylogowany";
                 int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(getContext(), text, duration);
+                Toast toast = Toast.makeText(getContext(), R.string.wylogowany, duration);
                 toast.show();
-
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(root.getContext(), Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
 
             }
         });
+
+
+        //mail=root.findViewById(R.id.tvtestMail);
+        //mail.setText(firebaseUser.getEmail());
+
+
+
         return root;
     }
 }

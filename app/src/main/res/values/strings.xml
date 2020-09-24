@@ -13,7 +13,7 @@
     <string name="find">Find</string>
     <string name="Anuluj">Cancel</string>
     <string name="dodajPrzes">Add package</string>
-    <string name="Cofnij">Undo</string>
+    <string name="Cofnij">Back</string>
     <string name="twojePacz">Your package</string>
     <string name="Zaloguj">Sign in</string>
     <string name="Login" translatable="false">Login</string>
@@ -24,4 +24,6 @@
     <string name="polapuste">Fields cannot be empty</string>
     <string name="roznehasla">Passwords provided are different</string>
     <string name="rejestudana">Register succesfull</string>
+    <string name="LoginiHalo">Fields cannot be empty!</string>
+    <string name="wylogowany">Logged out</string>
 </resources>

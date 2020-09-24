@@ -22,4 +22,6 @@
     <string name="polapuste">Pola nie mogą być puste</string>
     <string name="roznehasla">Podane hasła różnią się</string>
     <string name="rejestudana">Rejestracja udana</string>
+    <string name="LoginiHalo">Pola nie mogą być puste!</string>
+    <string name="wylogowany">Wylogowany</string>
 </resources>
