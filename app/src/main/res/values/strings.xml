@@ -1,6 +1,24 @@
 <resources>
-    <string name="app_name">Aplikacja Kurierska</string>
+    <string name="app_name">Courier Application</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="findpack">Find a package</string>
+    <string name="Contact">Contact</string>
+    <string name="Wyloguj">Sign out</string>
+    <string name="ObslugaKlienta">Customer service</string>
+    <string name="nrTel">Phone number</string>
+    <string name="mail">E-mail</string>
+    <string name="nrPrzesylki">Tracking number</string>
+    <string name="find">Find</string>
+    <string name="Anuluj">Cancel</string>
+    <string name="dodajPrzes">Add package</string>
+    <string name="Cofnij">Undo</string>
+    <string name="twojePacz">Your package</string>
+    <string name="Zaloguj">Sign in</string>
+    <string name="Login" translatable="false">Login</string>
+    <string name="Haslo">Password</string>
+    <string name="Imie">Name</string>
+    <string name="Nazwisko">Surname</string>
+    <string name="noweKonto">Create new account</string>
 </resources>

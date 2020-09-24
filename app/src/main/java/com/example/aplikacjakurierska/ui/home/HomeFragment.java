@@ -15,7 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.aplikacjakurierska.MainActivity;
 import com.example.aplikacjakurierska.R;
+import com.example.aplikacjakurierska.login.Login;
 import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.example.aplikacjakurierska.user.Kontakt;
 
@@ -65,6 +67,10 @@ Button bWyloguj;
 
                 Toast toast = Toast.makeText(getContext(), text, duration);
                 toast.show();
+
+                Intent intent = new Intent(root.getContext(), Login.class);
+                startActivity(intent);
+
             }
         });
         return root;

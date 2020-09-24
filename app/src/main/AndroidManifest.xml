@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".user.Kontakt"></activity>
+        <activity android:name=".login.Rejestracja"></activity>
+        <activity android:name=".Kurier.KurierActivity" />
+        <activity android:name=".Admin.AdminActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".user.Kontakt" />
         <activity android:name=".user.DodajPrzeylke" />
         <activity
-            android:name=".MainActivity"
+            android:name=".login.Login"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

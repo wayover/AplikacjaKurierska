@@ -25,12 +25,6 @@ public class DodajPrzeylke extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                String text = "Hello toast!";
-//                int duration = Toast.LENGTH_SHORT;
-//
-//                Toast toast = Toast.makeText(getContext(), text, duration);
-//                toast.show();
-
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 

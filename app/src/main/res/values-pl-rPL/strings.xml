@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplikacja Kurierska</string>
+    <string name="title_home">Strona główna</string>
+    <string name="findpack">Znajdź przesyłkę</string>
+    <string name="Contact">Kontakt</string>
+    <string name="Wyloguj">Wyloguj</string>
+    <string name="ObslugaKlienta">Obsługa klienta</string>
+    <string name="nrTel">Numer telefonu</string>
+    <string name="mail">E-mail</string>
+    <string name="nrPrzesylki">Numer przesyłki</string>
+    <string name="find">Znajdź</string>
+    <string name="Anuluj">Anuluj</string>
+    <string name="dodajPrzes">Dodaj przesyłkę</string>
+    <string name="Cofnij">Cofnij</string>
+    <string name="twojePacz">Twoje przesyłki</string>
+    <string name="Zaloguj">Zaloguj</string>
+    <string name="Haslo">Hasło</string>
+    <string name="Imie">Imie</string>
+    <string name="Nazwisko">Nazwisko</string>
+    <string name="noweKonto">Stwórz nowe konto</string>
+</resources>
