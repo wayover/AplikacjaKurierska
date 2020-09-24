@@ -14,12 +14,12 @@
         android:ems="10"
         android:hint="@string/mail"
         android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="@+id/etHaslo"
-        app:layout_constraintStart_toStartOf="@+id/etHaslo"
+        app:layout_constraintEnd_toEndOf="@+id/etrHaslo"
+        app:layout_constraintStart_toStartOf="@+id/etrHaslo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etHaslo"
+        android:id="@+id/etrHaslo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         android:text="@string/Zaloguj"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etHaslo" />
+        app:layout_constraintTop_toBottomOf="@+id/etrHaslo" />
 
     <TextView
         android:id="@+id/textView10"
@@ -60,9 +60,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Haslo"
-        app:layout_constraintBottom_toBottomOf="@+id/etHaslo"
+        app:layout_constraintBottom_toBottomOf="@+id/etrHaslo"
         app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/etHaslo" />
+        app:layout_constraintTop_toTopOf="@+id/etrHaslo" />
 
     <TextView
         android:id="@+id/tvlog"

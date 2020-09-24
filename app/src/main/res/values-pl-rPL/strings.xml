@@ -19,4 +19,7 @@
     <string name="Imie">Imie</string>
     <string name="Nazwisko">Nazwisko</string>
     <string name="noweKonto">Stwórz nowe konto</string>
+    <string name="polapuste">Pola nie mogą być puste</string>
+    <string name="roznehasla">Podane hasła różnią się</string>
+    <string name="rejestudana">Rejestracja udana</string>
 </resources>

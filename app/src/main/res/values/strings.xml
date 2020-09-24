@@ -21,4 +21,7 @@
     <string name="Imie">Name</string>
     <string name="Nazwisko">Surname</string>
     <string name="noweKonto">Create new account</string>
+    <string name="polapuste">Fields cannot be empty</string>
+    <string name="roznehasla">Passwords provided are different</string>
+    <string name="rejestudana">Register succesfull</string>
 </resources>

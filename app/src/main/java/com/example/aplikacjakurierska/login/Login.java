@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.aplikacjakurierska.Admin.AdminActivity;
 import com.example.aplikacjakurierska.Kurier.KurierActivity;
-import com.example.aplikacjakurierska.MainActivity;
 import com.example.aplikacjakurierska.R;
 
 public class Login extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        etHas=findViewById(R.id.etHaslo);
+        etHas=findViewById(R.id.etrHaslo);
         etLog=findViewById(R.id.etLogin);
 
         tvlog=findViewById(R.id.tvlog);
