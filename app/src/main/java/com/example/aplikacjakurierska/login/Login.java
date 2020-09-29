@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,16 +21,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.lang.reflect.Field;
 
 public class Login extends AppCompatActivity {
 
     EditText etHas,etLog;
-    Button bZaloguj,bZarejestruj;
-    TextView tvlog,tvhas;
+    Button bZaloguj,bZarejestruj, bReset;
+    ProgressBar pbLogin;
 
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,7 @@ public class Login extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+
         FirebaseUser firebaseUser= mAuth.getCurrentUser();
         if (firebaseUser != null) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -44,9 +48,7 @@ public class Login extends AppCompatActivity {
         }
         etHas=findViewById(R.id.etrHaslo);
         etLog=findViewById(R.id.etLogin);
-
-        tvlog=findViewById(R.id.tvlog);
-        tvhas=findViewById(R.id.tvhas);
+        pbLogin=findViewById(R.id.pbLogin);
 
 
         bZarejestruj=findViewById(R.id.bZarejestruj);
@@ -63,28 +65,40 @@ public class Login extends AppCompatActivity {
         bZaloguj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pbLogin.setVisibility(View.VISIBLE);
                 String login=etLog.getText().toString();
                 String haslo=etHas.getText().toString();
-                tvhas.setText(haslo);
-                tvlog.setText(login);
+
                 if(!login.isEmpty()&&!haslo.isEmpty()) {
                     mAuth.signInWithEmailAndPassword(login, haslo)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    pbLogin.setVisibility(View.INVISIBLE);
                                     if (task.isSuccessful()) {
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                     } else {
+                                        pbLogin.setVisibility(View.INVISIBLE);
                                          Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
 
                 }else{
+                    pbLogin.setVisibility(View.INVISIBLE);
                     Toast.makeText(getApplicationContext(), R.string.polapuste, Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+
+        bReset=findViewById(R.id.bReset);
+        bReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Reset.class);
+                startActivity(intent);
             }
         });
 

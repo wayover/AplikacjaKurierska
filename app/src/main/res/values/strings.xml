@@ -26,4 +26,7 @@
     <string name="rejestudana">Register succesfull</string>
     <string name="LoginiHalo">Fields cannot be empty!</string>
     <string name="wylogowany">Logged out</string>
+    <string name="ForgotPas">Forgot password</string>
+    <string name="ResetPas">Reset password</string>
+    <string name="PasSend">Password send to your Email</string>
 </resources>

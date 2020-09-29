@@ -10,13 +10,13 @@
         android:id="@+id/etLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/mail"
         android:importantForAutofill="no"
         app:layout_constraintEnd_toEndOf="@+id/etrHaslo"
         app:layout_constraintStart_toStartOf="@+id/etrHaslo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pbLogin" />
 
     <EditText
         android:id="@+id/etrHaslo"
@@ -38,7 +38,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:text="@string/Zaloguj"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,32 +64,35 @@
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/etrHaslo" />
 
-    <TextView
-        android:id="@+id/tvlog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bZarejestruj" />
-
-    <TextView
-        android:id="@+id/tvhas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvlog" />
-
     <Button
         android:id="@+id/bZarejestruj"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/noweKonto"
         app:layout_constraintEnd_toEndOf="@+id/bZaloguj"
         app:layout_constraintStart_toStartOf="@+id/bZaloguj"
         app:layout_constraintTop_toBottomOf="@+id/bZaloguj" />
+
+    <Button
+        android:id="@+id/bReset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/ForgotPas"
+        app:layout_constraintEnd_toEndOf="@+id/bZarejestruj"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/bZarejestruj"
+        app:layout_constraintTop_toBottomOf="@+id/bZarejestruj" />
+
+    <ProgressBar
+        android:id="@+id/pbLogin"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="32dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

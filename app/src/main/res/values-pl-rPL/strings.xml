@@ -24,4 +24,7 @@
     <string name="rejestudana">Rejestracja udana</string>
     <string name="LoginiHalo">Pola nie mogą być puste!</string>
     <string name="wylogowany">Wylogowany</string>
+    <string name="ForgotPas">Zapomniałem hasła</string>
+    <string name="ResetPas">Resetuj hasło</string>
+    <string name="PasSend">Hasło zostało wysłane na maila</string>
 </resources>
