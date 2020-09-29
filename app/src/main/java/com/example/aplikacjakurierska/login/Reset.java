@@ -50,7 +50,7 @@ public class Reset extends AppCompatActivity {
                 });
             }
         });
-        
+
 
         bCofnij=findViewById(R.id.bResCofnij);
         bCofnij.setOnClickListener(new View.OnClickListener() {

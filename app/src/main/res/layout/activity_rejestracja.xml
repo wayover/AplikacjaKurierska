@@ -41,14 +41,13 @@
         android:id="@+id/etRMail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/etrHaslo"
-        app:layout_constraintStart_toEndOf="@+id/etrHaslo"
-        app:layout_constraintStart_toStartOf="@+id/etrHaslo"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintEnd_toEndOf="@+id/etRTel"
+        app:layout_constraintStart_toStartOf="@+id/etRTel"
+        app:layout_constraintTop_toBottomOf="@+id/etRTel" />
 
     <EditText
         android:id="@+id/etrHaslo"
@@ -58,8 +57,8 @@
         android:ems="10"
         android:hint="@string/Haslo"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/etRhaslo2"
-        app:layout_constraintStart_toStartOf="@+id/etRhaslo2"
+        app:layout_constraintEnd_toEndOf="@+id/etRMail"
+        app:layout_constraintStart_toStartOf="@+id/etRMail"
         app:layout_constraintTop_toBottomOf="@+id/etRMail" />
 
     <Button
@@ -67,38 +66,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/noweKonto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRBlad" />
-
-    <TextView
-        android:id="@+id/tvRBlad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="aa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etRhaslo2"
-        tools:visibility="invisible" />
+        app:layout_constraintTop_toBottomOf="@+id/etRhaslo2" />
 
     <EditText
         android:id="@+id/etRhaslo2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/Haslo"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="@+id/etrHaslo"
+        app:layout_constraintStart_toStartOf="@+id/etrHaslo"
         app:layout_constraintTop_toBottomOf="@+id/etrHaslo" />
 
     <TextView
@@ -121,4 +105,69 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Imie"
+        app:layout_constraintBottom_toBottomOf="@+id/etRImie"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/etRImie" />
+
+    <EditText
+        android:id="@+id/etRImie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/Imie"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etRNazw"
+        app:layout_constraintStart_toStartOf="@+id/etRNazw"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <EditText
+        android:id="@+id/etRNazw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/Nazwisko"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/etRImie" />
+
+    <EditText
+        android:id="@+id/etRTel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/nrTel"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="@+id/etRNazw"
+        app:layout_constraintStart_toStartOf="@+id/etRNazw"
+        app:layout_constraintTop_toBottomOf="@+id/etRNazw" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Nazwisko"
+        app:layout_constraintBottom_toBottomOf="@+id/etRNazw"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/etRNazw" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nrTel"
+        app:layout_constraintBottom_toBottomOf="@+id/etRTel"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="@+id/etRTel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

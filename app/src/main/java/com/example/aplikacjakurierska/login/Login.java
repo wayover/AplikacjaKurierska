@@ -21,7 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.lang.reflect.Field;
 
@@ -32,7 +31,6 @@ public class Login extends AppCompatActivity {
     ProgressBar pbLogin;
 
     private FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +38,6 @@ public class Login extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
-
         FirebaseUser firebaseUser= mAuth.getCurrentUser();
         if (firebaseUser != null) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
