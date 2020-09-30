@@ -1,4 +1,4 @@
-package com.example.aplikacjakurierska.Kurier;
+package com.example.aplikacjakurierska.Manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,18 +12,17 @@ import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class KurierActivity extends AppCompatActivity {
-
+public class ManagerActivity extends AppCompatActivity {
 
     Button bWyloguj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kurier_);
+        setContentView(R.layout.activity_manager);
 
 
 
-        bWyloguj=findViewById(R.id.bKWyloguj);
+        bWyloguj=findViewById(R.id.bMWyloguj);
 
         bWyloguj.setOnClickListener(new View.OnClickListener() {
             @Override

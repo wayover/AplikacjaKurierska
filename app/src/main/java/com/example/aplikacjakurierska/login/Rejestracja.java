@@ -82,7 +82,7 @@ public class Rejestracja extends AppCompatActivity {
                                     userInfo.put("Imie",imie);
                                     userInfo.put("Nazwisko",nazwisko);
                                     userInfo.put("Telefon",telefon);
-                                    userInfo.put("Role","0");//0-user 1-admin 2- courier
+                                    userInfo.put("Role","0");//0-user 1-admin 2- courier 3-managment
 
                                     df.set(userInfo).addOnFailureListener(new OnFailureListener() {
                                         @Override
@@ -92,9 +92,10 @@ public class Rejestracja extends AppCompatActivity {
                                     });
 
 
-                                   // Toast.makeText(getApplicationContext(), R.string.rejestudana, Toast.LENGTH_LONG).show();
-                                   // Intent intent = new Intent(getApplicationContext(), Login.class);
-                                    //startActivity(intent);
+
+                                    Toast.makeText(getApplicationContext(), R.string.rejestudana, Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                                    startActivity(intent);
                                 }else{
                                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                                 }
