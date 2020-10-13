@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 public class DodawanieManagera extends AppCompatActivity {
@@ -28,12 +31,17 @@ public class DodawanieManagera extends AppCompatActivity {
     ArrayList<String>userlist;
     ArrayList<UserClass>infolist;
     String mail,imie,nazwisko,rola,telefon;
+    EditText Znajdzmail;
+    Button znajdz,cofnij;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dodawanie_managera);
 
+        Znajdzmail=findViewById(R.id.etInfoFind);
+        znajdz=findViewById(R.id.bInfoZnajdz);
+        cofnij=findViewById(R.id.bDodajCofnij);
         lvUserList=findViewById(R.id.lvUserList);
         fStore=FirebaseFirestore.getInstance();
         userlist=new ArrayList<>();
@@ -51,6 +59,7 @@ public class DodawanieManagera extends AppCompatActivity {
                         imie= (String) document.get("Imie");
                         nazwisko= (String) document.get("Nazwisko");
                         rola= (String) document.get("Role");
+
                         telefon= (String) document.get("Telefon");
                         UserClass user=new UserClass(mail,imie,nazwisko,rola,telefon);
                         infolist.add(user);
@@ -68,11 +77,11 @@ public class DodawanieManagera extends AppCompatActivity {
 
                     }
                 }else{
-                    Toast toast = Toast.makeText(getApplicationContext(),task.getException().toString(),Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(),task.getException().toString(),Toast.LENGTH_LONG).show();
                 }
 
 
-                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,userlist);
+                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,userlist);
                 lvUserList.setAdapter(arrayAdapter);
 
                 lvUserList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -93,6 +102,38 @@ public class DodawanieManagera extends AppCompatActivity {
 
 
 
+        znajdz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int j=0;
+                for(int i=0;i<infolist.size();i++){
+                    if(infolist.get(i).getEmail().equals(Znajdzmail.getText().toString())){
+                        Intent intent = new Intent(getApplicationContext(), UserInfo.class);
+                        intent.putExtra("mail",infolist.get(i).getEmail());
+                        intent.putExtra("imie",infolist.get(i).getImie());
+                        intent.putExtra("nazwisko",infolist.get(i).getNazwisko());
+                        intent.putExtra("rola",infolist.get(i).getRole());
+                        intent.putExtra("telefon",infolist.get(i).getTelefon());
+                        startActivity(intent);
+                    }else{
+                        j++;
+                    }
+                }
+
+                if(infolist.size()==j){
+                    Toast.makeText(getApplicationContext(),R.string.mailDFi,Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+        cofnij.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

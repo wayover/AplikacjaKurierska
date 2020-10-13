@@ -29,6 +29,8 @@
     <string name="PasSend">Hasło zostało wysłane na maila</string>
     <string name="DodMan">Dodaj managera</string>
     <string name="DelMan">Usuń managera</string>
-    <string name="makeCour">Zrób Kuriera</string>
-    <string name="makeMan">Zrób Managera</string>
+    <string name="makeCour">Dodaj uprawneinia kuriera</string>
+    <string name="makeMan">Dodaj uprawnienia managera</string>
+    <string name="makeUser">Unuś uprawnienia</string>
+    <string name="mailDFi">Mail nie został znaleziony</string>
 </resources>

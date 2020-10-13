@@ -31,6 +31,8 @@
     <string name="PasSend">Password send to your Email</string>
     <string name="DodMan">Add Manager</string>
     <string name="DelMan">Delete manager</string>
-    <string name="makeCour">Make Courier</string>
-    <string name="makeMan">Make Manager</string>
+    <string name="makeCour">Add the courier permission</string>
+    <string name="makeMan">Add the manager permission</string>
+    <string name="makeUser">Remove permissions</string>
+    <string name="mailDFi">Mail not found</string>
 </resources>
