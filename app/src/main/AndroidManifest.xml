@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Manager.ManagerActivity"></activity>
+        <activity android:name=".Admin.UserInfo"></activity>
+        <activity android:name=".Admin.UsuwanieManagera" />
+        <activity android:name=".Admin.DodawanieManagera" />
+        <activity android:name=".Manager.ManagerActivity" />
         <activity android:name=".login.Reset" />
         <activity android:name=".login.Rejestracja" />
         <activity android:name=".Kurier.KurierActivity" />

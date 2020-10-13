@@ -10,16 +10,34 @@ import android.widget.Toast;
 
 import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
+import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminActivity extends AppCompatActivity {
 
 
-    Button bWyloguj;
+    Button bWyloguj,bDodaj,bUsun;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        bDodaj=findViewById(R.id.bADodajMen);
+        bUsun=findViewById(R.id.bAUsunmen);
+
+        bDodaj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DodawanieManagera.class));
+            }
+        });
+
+        bUsun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UsuwanieManagera.class));
+            }
+        });
 
 
         bWyloguj=findViewById(R.id.bAWyloguj);

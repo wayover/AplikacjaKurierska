@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "188647853546",
+    "firebase_url": "https://aplikacja-kurierska-a7170.firebaseio.com",
+    "project_id": "aplikacja-kurierska-a7170",
+    "storage_bucket": "aplikacja-kurierska-a7170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188647853546:android:402946fdb32360f1d7b693",
+        "android_client_info": {
+          "package_name": "com.example.aplikacjakurierska"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188647853546-qtttqbluesvrkinnuamb787enfvpm3rl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aplikacjakurierska",
+            "certificate_hash": "4bfcbf472b6e76cc7f88646e71e10601872c8a0c"
+          }
+        },
+        {
+          "client_id": "188647853546-8u5rdgnfo50ju8jq8sutrra01ufm4nmt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKld5kQ3hpaUrLavuZnxzUTqmA7aMMy-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "188647853546-8u5rdgnfo50ju8jq8sutrra01ufm4nmt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -29,4 +29,8 @@
     <string name="ForgotPas">Forgot password</string>
     <string name="ResetPas">Reset password</string>
     <string name="PasSend">Password send to your Email</string>
+    <string name="DodMan">Add Manager</string>
+    <string name="DelMan">Delete manager</string>
+    <string name="makeCour">Make Courier</string>
+    <string name="makeMan">Make Manager</string>
 </resources>
