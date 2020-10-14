@@ -10,11 +10,12 @@ import android.widget.Toast;
 
 import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
+import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    Button bWyloguj;
+    Button bWyloguj,bDodajPacz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,17 @@ public class ManagerActivity extends AppCompatActivity {
 
 
         bWyloguj=findViewById(R.id.bMWyloguj);
+        bDodajPacz=findViewById(R.id.bManDodajPaczke);
+
+        bDodajPacz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), DodajPacz.class);
+                startActivity(intent);
+
+            }
+        });
 
         bWyloguj.setOnClickListener(new View.OnClickListener() {
             @Override

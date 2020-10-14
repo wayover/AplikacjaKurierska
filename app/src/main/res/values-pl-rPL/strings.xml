@@ -33,4 +33,15 @@
     <string name="makeMan">Dodaj uprawnienia managera</string>
     <string name="makeUser">Unuś uprawnienia</string>
     <string name="mailDFi">Mail nie został znaleziony</string>
+    <string name="AddPack">Dodaj paczkę</string>
+    <string name="Customermail">Mail Klienta</string>
+    <string name="CourierMail">Mail Kuriera</string>
+    <string name="CustomName">Imie Klienta</string>
+    <string name="CustomerSurname">Nazwisko Klienta</string>
+    <string name="CustomerPhone">Telefon Klienta</string>
+    <string name="Street">Ulica</string>
+    <string name="City">Miasto</string>
+    <string name="ZipCode">Kod Pocztowy</string>
+    <string name="Housenumber">Nr Domu</string>
+    <string name="Flatnumber">Nr Mieszkania</string>
 </resources>

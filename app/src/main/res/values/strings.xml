@@ -35,4 +35,15 @@
     <string name="makeMan">Add the manager permission</string>
     <string name="makeUser">Remove permissions</string>
     <string name="mailDFi">Mail not found</string>
+    <string name="AddPack">Add a package</string>
+    <string name="Customermail">Customer mail</string>
+    <string name="CourierMail">Courier Mail</string>
+    <string name="CustomName">Customer Name</string>
+    <string name="CustomerSurname">Customer Surname</string>
+    <string name="CustomerPhone">Customer Phone</string>
+    <string name="Street">Street</string>
+    <string name="ZipCode">Postcode</string>
+    <string name="City">City</string>
+    <string name="Housenumber">House number</string>
+    <string name="Flatnumber">Flat number</string>
 </resources>
