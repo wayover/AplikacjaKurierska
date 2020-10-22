@@ -44,4 +44,12 @@
     <string name="ZipCode">Kod Pocztowy</string>
     <string name="Housenumber">Nr Domu</string>
     <string name="Flatnumber">Nr Mieszkania</string>
+    <string name="pckadd">Paczka została dodana</string>
+    <string name="chkPack">Sprawdź paczki</string>
+    <string name="IdPack">ID</string>
+    <string name="idNFind">Nie znaleziono id</string>
+    <string name="rmPack">Usuń paczke</string>
+    <string name="userDelete">Paczka została usunięta</string>
+    <string name="AreUsus">Czy na pewno?</string>
+    <string name="PckDsFound">Paczka nie została znaleziona</string>
 </resources>

@@ -191,13 +191,11 @@ public class UserInfo extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
-//
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-//
                                         }
                                     });
 

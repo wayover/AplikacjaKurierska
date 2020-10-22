@@ -121,7 +121,7 @@ public class DodawanieManagera extends AppCompatActivity {
                 }
 
                 if(infolist.size()==j){
-                    Toast.makeText(getApplicationContext(),R.string.mailDFi,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.idNFind,Toast.LENGTH_LONG).show();
                 }
             }
         });

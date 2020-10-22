@@ -46,4 +46,13 @@
     <string name="City">City</string>
     <string name="Housenumber">House number</string>
     <string name="Flatnumber">Flat number</string>
+    <string name="pckadd">The package has been added</string>
+    <string name="chkPack">Check Package</string>
+    <string name="IdPack">ID</string>
+    <string name="idNFind">ID not found</string>
+    <string name="rmPack">Remove package</string>
+    <string name="userDelete">User has been deleted</string>
+    <string name="AreUsus">Are you sure?</string>
+    <string name="Ok" translatable="false">OK</string>
+    <string name="PckDsFound">The package hasn\'t been found</string>
 </resources>

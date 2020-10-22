@@ -2,6 +2,9 @@ package com.example.aplikacjakurierska.Manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,17 +18,16 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    Button bWyloguj,bDodajPacz;
+    Button bWyloguj,bDodajPacz,bSprawdz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
 
 
-
         bWyloguj=findViewById(R.id.bMWyloguj);
         bDodajPacz=findViewById(R.id.bManDodajPaczke);
-
+        bSprawdz=findViewById(R.id.bManaSprawdz);
         bDodajPacz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +37,16 @@ public class ManagerActivity extends AppCompatActivity {
 
             }
         });
+
+
+        bSprawdz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SprawdzPaczki.class);
+                startActivity(intent);
+            }
+        });
+
 
         bWyloguj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,5 +64,10 @@ public class ManagerActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+
     }
+
 }
