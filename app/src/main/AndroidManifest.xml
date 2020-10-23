@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Manager.PackInfo"></activity>
+        <activity android:name=".user.PackUserInfo"></activity>
+        <activity android:name=".Manager.PackInfo" />
         <activity android:name=".Manager.SprawdzPaczki" />
         <activity android:name=".Manager.DodajPacz" />
         <activity android:name=".Admin.UserInfo" />
