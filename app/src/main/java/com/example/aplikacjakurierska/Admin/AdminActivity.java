@@ -16,14 +16,22 @@ import com.google.firebase.auth.FirebaseAuth;
 public class AdminActivity extends AppCompatActivity {
 
 
-    Button bWyloguj,bDodaj,bUsun;
+    Button bWyloguj,bDodaj,bDodajMagazyn,bSprawdzMagazyn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
         bDodaj=findViewById(R.id.bADodajMen);
-        bUsun=findViewById(R.id.bAUsunmen);
+        bDodajMagazyn=findViewById(R.id.bADodajMagazyn);
+        bSprawdzMagazyn=findViewById(R.id.bASprawdzMag);
+
+        bDodajMagazyn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DodajMagazyn.class));
+            }
+        });
 
         bDodaj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,10 +40,11 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-        bUsun.setOnClickListener(new View.OnClickListener() {
+
+        bSprawdzMagazyn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UsuwanieManagera.class));
+                startActivity(new Intent(getApplicationContext(), SprawdzMagazyn.class));
             }
         });
 

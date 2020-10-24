@@ -75,7 +75,7 @@ public class PackInfo extends AppCompatActivity {
                                 docfer.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        Toast.makeText(getApplicationContext(),R.string.userDelete,Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(),R.string.PackDelete,Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(getApplicationContext(), SprawdzPaczki.class);
                                         startActivity(intent);
                                     }

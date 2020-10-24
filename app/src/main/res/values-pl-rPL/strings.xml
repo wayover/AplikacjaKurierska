@@ -49,7 +49,14 @@
     <string name="IdPack">ID</string>
     <string name="idNFind">Nie znaleziono id</string>
     <string name="rmPack">Usuń paczke</string>
-    <string name="userDelete">Paczka została usunięta</string>
+    <string name="PackDelete">Paczka została usunięta</string>
     <string name="AreUsus">Czy na pewno?</string>
     <string name="PckDsFound">Paczka nie została znaleziona</string>
+    <string name="AddMagazin">Dodaj Magazyn</string>
+    <string name="Add">Dodaj</string>
+    <string name="Number">Numer</string>
+    <string name="MagAdd">Magazyn został dodany</string>
+    <string name="CheckMag">Sprawdz magazyn</string>
+    <string name="Del">Usuń</string>
+    <string name="MagDelete">Magazyn został usunięty</string>
 </resources>

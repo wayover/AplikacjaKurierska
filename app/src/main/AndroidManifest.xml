@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".user.PackUserInfo"></activity>
+        <activity android:name=".Admin.MagazynInfo"></activity>
+        <activity android:name=".Admin.SprawdzMagazyn" />
+        <activity android:name=".Admin.DodajMagazyn" />
+        <activity android:name=".user.PackUserInfo" />
         <activity android:name=".Manager.PackInfo" />
         <activity android:name=".Manager.SprawdzPaczki" />
         <activity android:name=".Manager.DodajPacz" />
         <activity android:name=".Admin.UserInfo" />
-        <activity android:name=".Admin.UsuwanieManagera" />
         <activity android:name=".Admin.DodawanieManagera" />
         <activity android:name=".Manager.ManagerActivity" />
         <activity android:name=".login.Reset" />

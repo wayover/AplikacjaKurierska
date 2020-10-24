@@ -51,8 +51,15 @@
     <string name="IdPack">ID</string>
     <string name="idNFind">ID not found</string>
     <string name="rmPack">Remove package</string>
-    <string name="userDelete">User has been deleted</string>
+    <string name="PackDelete">Package has been deleted</string>
     <string name="AreUsus">Are you sure?</string>
     <string name="Ok" translatable="false">OK</string>
     <string name="PckDsFound">The package hasn\'t been found</string>
+    <string name="AddMagazin">Add a magazine</string>
+    <string name="Add">Add</string>
+    <string name="Number">Number</string>
+    <string name="MagAdd">The magazine has been added</string>
+    <string name="CheckMag">Check Magazine</string>
+    <string name="Del">Delete</string>
+    <string name="MagDelete">Magazine has been deleted</string>
 </resources>
