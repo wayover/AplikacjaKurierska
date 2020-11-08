@@ -59,4 +59,8 @@
     <string name="CheckMag">Sprawdz magazyn</string>
     <string name="Del">Usuń</string>
     <string name="MagDelete">Magazyn został usunięty</string>
+    <string name="Magazine">Magazyn</string>
+    <string name="ChgLng">Zmień język</string>
+    <string name="Checkyourpackage">Sprawdź swoje przesyłki</string>
+    <string name="Navigate">Nawigacja</string>
 </resources>

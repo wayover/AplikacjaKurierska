@@ -15,14 +15,21 @@ import com.google.firebase.auth.FirebaseAuth;
 public class KurierActivity extends AppCompatActivity {
 
 
-    Button bWyloguj;
+    Button bWyloguj,bSprawdzPrzesylki;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kurier_);
 
 
-
+        bSprawdzPrzesylki=findViewById(R.id.bKurierSprawdzPrzesylki);
+        bSprawdzPrzesylki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SprawdzPrzesylki.class);
+                startActivity(intent);
+            }
+        });
         bWyloguj=findViewById(R.id.bKWyloguj);
 
         bWyloguj.setOnClickListener(new View.OnClickListener() {

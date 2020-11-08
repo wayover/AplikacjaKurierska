@@ -3,6 +3,7 @@ package com.example.aplikacjakurierska.Admin.user;
 import android.widget.ScrollView;
 
 public class UserClass {
+    String Id;
     String Email;
     String Imie;
     String Nazwisko;
@@ -24,6 +25,23 @@ public class UserClass {
         this.Nazwisko = nazwisko;
         this.Role = rola;
         this.Telefon = telefon;
+    }
+
+    public UserClass(String id,String mail, String imie, String nazwisko, String rola, String telefon) {
+        this.Id=id;
+        this.Email = mail;
+        this.Imie = imie;
+        this.Nazwisko = nazwisko;
+        this.Role = rola;
+        this.Telefon = telefon;
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
     }
 
     public String getEmail() {

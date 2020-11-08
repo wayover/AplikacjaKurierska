@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PackUserInfo extends AppCompatActivity {
 
-    TextView Id,imie,nazwisko,kod,mail,miasto,telefon,ulica,nrdomu,nrmieszkania,idklienta;
+    TextView Id,imie,nazwisko,kod,mail,miasto,telefon,ulica,nrdomu,nrmieszkania,idklienta,idmagazynu;
     Button cofnij;
     FirebaseFirestore fStore;
 
@@ -38,6 +38,7 @@ public class PackUserInfo extends AppCompatActivity {
         nrdomu=findViewById(R.id.tvUserInfoNrDomu);
         nrmieszkania=findViewById(R.id.tvUserInfoNrMieszkania);
         idklienta=findViewById(R.id.tvUserInfoIdKlienta);
+        idmagazynu=findViewById(R.id.tvUserInfoIdMagazynu);
 
         Id.setText(getIntent().getStringExtra("id"));
         imie.setText(getIntent().getStringExtra("imie"));
@@ -50,6 +51,7 @@ public class PackUserInfo extends AppCompatActivity {
         nrdomu.setText(getIntent().getStringExtra("nrdomu"));
         nrmieszkania.setText(getIntent().getStringExtra("nrmieszkania"));
         idklienta.setText(getIntent().getStringExtra("idKlienta"));
+        idmagazynu.setText(getIntent().getStringExtra("idMagazynu"));
 
 
         cofnij.setOnClickListener(new View.OnClickListener() {

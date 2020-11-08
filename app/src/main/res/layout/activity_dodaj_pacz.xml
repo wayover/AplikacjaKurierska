@@ -100,6 +100,13 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/Flatnumber" />
 
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/Magazine" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -136,13 +143,12 @@
                     android:ems="10"
                     android:inputType="textEmailAddress|phone" />
 
-                <EditText
-                    android:id="@+id/etDodajMailKuriera"
+
+                <Spinner
+                    android:id="@+id/sDodajMailKuriera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
+                    android:layout_marginTop="25dp" />
 
                 <EditText
                     android:id="@+id/etDodajMiasto"
@@ -183,6 +189,12 @@
                     android:layout_marginTop="15dp"
                     android:ems="10"
                     android:inputType="textEmailAddress" />
+
+                <Spinner
+                    android:id="@+id/sDodajMagazyn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp" />
 
             </LinearLayout>
 

@@ -12,8 +12,9 @@ public class Paczka {
     String Telefon;
     String Ulica;
     String IdKlienta;
+    String IdMagazynu;
 
-    public Paczka(String id, String imie, String kod, String nazwisko, String mail, String miasto, String nrdomu, String nrMieszkania, String telefon, String ulica,String idKlienta) {
+    public Paczka(String id, String imie, String kod, String nazwisko, String mail, String miasto, String nrdomu, String nrMieszkania, String telefon, String ulica,String idKlienta,String idMagazynu) {
         Id = id;
         Imie = imie;
         Kod = kod;
@@ -25,6 +26,15 @@ public class Paczka {
         Telefon = telefon;
         Ulica = ulica;
         IdKlienta=idKlienta;
+        IdMagazynu=idMagazynu;
+    }
+
+    public String getIdMagazynu() {
+        return IdMagazynu;
+    }
+
+    public void setIdMagazynu(String idMagazynu) {
+        IdMagazynu = idMagazynu;
     }
 
     public String getIdKlienta() {

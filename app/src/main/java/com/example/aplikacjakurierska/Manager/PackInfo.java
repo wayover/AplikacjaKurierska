@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PackInfo extends AppCompatActivity {
 
 
-    TextView Id,imie,nazwisko,kod,mail,miasto,telefon,ulica,nrdomu,nrmieszkania,idklienta;
+    TextView Id,imie,nazwisko,kod,mail,miasto,telefon,ulica,nrdomu,nrmieszkania,idklienta,idmagazynu;
     Button cofnij,bUsun;
     FirebaseFirestore fStore;
     @Override
@@ -44,6 +44,7 @@ public class PackInfo extends AppCompatActivity {
         nrdomu=findViewById(R.id.tvInfoNrDomu);
         nrmieszkania=findViewById(R.id.tvInfoNrMieszkania);
         idklienta=findViewById(R.id.tvInfoIdKlienta);
+        idmagazynu=findViewById(R.id.tvInfoIdMagazynu);
 
         Id.setText(getIntent().getStringExtra("id"));
         imie.setText(getIntent().getStringExtra("imie"));
@@ -56,6 +57,7 @@ public class PackInfo extends AppCompatActivity {
         nrdomu.setText(getIntent().getStringExtra("nrdomu"));
         nrmieszkania.setText(getIntent().getStringExtra("nrmieszkania"));
         idklienta.setText(getIntent().getStringExtra("idKlienta"));
+        idmagazynu.setText(getIntent().getStringExtra("idMagazynu"));
 
 
 

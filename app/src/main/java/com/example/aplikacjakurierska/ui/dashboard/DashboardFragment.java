@@ -39,7 +39,7 @@ public class DashboardFragment extends Fragment {
     FirebaseAuth mAuth;
     ArrayList<String> infolist;
     ArrayList<Paczka>packinfo;
-    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta;
+    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazynu;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -69,9 +69,10 @@ public class DashboardFragment extends Fragment {
                         Telefon=(String)document.get("Telefon");
                         Ulica=(String)document.get("Ulica");
                         IdKlienta=(String)document.get("IdKlienta");
+                        IdMagazynu=(String)document.get("IdMagazynu");
 
                         if(IdKlienta.equals(mAuth.getUid().toString())) {
-                            Paczka pck = new Paczka(Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta);
+                            Paczka pck = new Paczka(Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta,IdMagazynu);
                             packinfo.add(pck);
                             infolist.add(Imie + " " + Nazwisko + "   " + Id);
                         }
@@ -98,6 +99,7 @@ public class DashboardFragment extends Fragment {
                         intent.putExtra("ulica",packinfo.get(position).getTelefon());
                         intent.putExtra("miasto",packinfo.get(position).getMiasto());
                         intent.putExtra("idKlienta",packinfo.get(position).getIdKlienta());
+                        intent.putExtra("idMagazynu",packinfo.get(position).getIdMagazynu());
                         startActivity(intent);
                     }
                 });

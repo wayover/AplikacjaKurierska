@@ -62,4 +62,10 @@
     <string name="CheckMag">Check Magazine</string>
     <string name="Del">Delete</string>
     <string name="MagDelete">Magazine has been deleted</string>
+    <string name="Magazine">Magazine</string>
+    <string name="ChgLng">Change language</string>
+    <string name="Polski" translatable="false">Polski</string>
+    <string name="English" translatable="false">English</string>
+    <string name="Checkyourpackage">Check your package</string>
+    <string name="Navigate">Navigate</string>
 </resources>

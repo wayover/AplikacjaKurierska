@@ -36,7 +36,7 @@ public class SprawdzPaczki extends AppCompatActivity {
     ArrayList<String>infolist;
     ArrayList<Paczka>packinfo;
     EditText etZnajdz;
-    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta;
+    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazyn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +100,9 @@ public class SprawdzPaczki extends AppCompatActivity {
                         Telefon=(String)document.get("Telefon");
                         Ulica=(String)document.get("Ulica");
                         IdKlienta=(String)document.get("IdKlienta");
+                        IdMagazyn=(String)document.get("IdMagazynu");
 
-                        Paczka pck=new Paczka(Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta);
+                        Paczka pck=new Paczka(Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazyn);
                         packinfo.add(pck);
                         infolist.add(Imie+" "+Nazwisko+"   "+Id);
                     }
@@ -127,6 +128,7 @@ public class SprawdzPaczki extends AppCompatActivity {
                         intent.putExtra("ulica",packinfo.get(position).getTelefon());
                         intent.putExtra("miasto",packinfo.get(position).getMiasto());
                         intent.putExtra("idKlienta",packinfo.get(position).getIdKlienta());
+                        intent.putExtra("idMagazynu",packinfo.get(position).getIdMagazynu());
                         startActivity(intent);
                     }
                 });
