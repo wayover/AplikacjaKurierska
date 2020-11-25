@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -74,6 +76,24 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
             }
         });
 
+
+
+        lvPrzesylkiInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+//                Uri gmmIntentUri = Uri.parse("google.navigation:q="+packlist.get(position).getMiasto()+","+packlist.get(position).getUlica()+","+packlist.get(position).getNrdomu());
+//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+//                mapIntent.setPackage("com.google.android.apps.maps");
+//                startActivity(mapIntent);
+                Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
+                intent.putExtra("miasto",packlist.get(position).getMiasto());
+                intent.putExtra("ulica",packlist.get(position).getUlica());
+                intent.putExtra("nr",packlist.get(position).getNrdomu());
+                startActivity(intent);
+
+            }
+        });
 
         bCofnij.setOnClickListener(new View.OnClickListener() {
             @Override
