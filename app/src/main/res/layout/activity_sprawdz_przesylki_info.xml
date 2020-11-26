@@ -7,13 +7,13 @@
     tools:context=".Kurier.SprawdzPrzesylkiInfo">
 
     <Button
-        android:id="@+id/bSprawdzNawiguj"
+        android:id="@+id/bOdbierzprzesyłki"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/Navigate"
+        android:text="@string/collectPck"
         app:layout_constraintBottom_toTopOf="@+id/bSprawdzPrzesylkiInfoCofnij"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -39,7 +39,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/bSprawdzNawiguj"
+        app:layout_constraintBottom_toTopOf="@+id/bOdbierzprzesyłki"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

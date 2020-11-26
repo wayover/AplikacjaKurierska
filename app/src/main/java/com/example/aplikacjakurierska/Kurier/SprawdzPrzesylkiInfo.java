@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,8 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.aplikacjakurierska.Admin.Magazyn.MagazynClass;
-import com.example.aplikacjakurierska.Manager.PackInfo;
 import com.example.aplikacjakurierska.Manager.Paczki.Paczka;
 import com.example.aplikacjakurierska.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,13 +20,12 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SprawdzPrzesylkiInfo extends AppCompatActivity {
 
 
     ListView lvPrzesylkiInfo;
-    Button bCofnij,bNawiguj;
+    Button bCofnij,bOdbierz;
     FirebaseFirestore fStore;
     ArrayList<String> paczki;
     ArrayList<Paczka> packlist;
@@ -42,7 +38,7 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
         setContentView(R.layout.activity_sprawdz_przesylki_info);
         lvPrzesylkiInfo=findViewById(R.id.lvSprawdzprzesylkiInfo);
         bCofnij=findViewById(R.id.bSprawdzPrzesylkiInfoCofnij);
-        bNawiguj=findViewById(R.id.bSprawdzNawiguj);
+        bOdbierz=findViewById(R.id.bOdbierzprzesyłki);
         paczki=new ArrayList<>();
         packlist= new ArrayList<>();
         String id=getIntent().getStringExtra("id");
@@ -82,10 +78,7 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                Uri gmmIntentUri = Uri.parse("google.navigation:q="+packlist.get(position).getMiasto()+","+packlist.get(position).getUlica()+","+packlist.get(position).getNrdomu());
-//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-//                mapIntent.setPackage("com.google.android.apps.maps");
-//                startActivity(mapIntent);
+
                 Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
                 intent.putExtra("miasto",packlist.get(position).getMiasto());
                 intent.putExtra("ulica",packlist.get(position).getUlica());
@@ -99,6 +92,15 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SprawdzPrzesylki.class);
+                startActivity(intent);
+            }
+        });
+
+        bOdbierz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), OdbierzPaczki.class);
+                intent.putExtra("idMagazynu",IdMagazyn);
                 startActivity(intent);
             }
         });

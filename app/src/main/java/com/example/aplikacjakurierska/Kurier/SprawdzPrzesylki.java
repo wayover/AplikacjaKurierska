@@ -81,7 +81,7 @@ public class SprawdzPrzesylki extends AppCompatActivity {
 
 
 
-                        fStore.collection("paczki").whereEqualTo("MailKuriera",mail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        fStore.collection("paczki").whereEqualTo("MailKuriera",mail).whereEqualTo("Odebrane","0").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 for(QueryDocumentSnapshot document :task.getResult()){

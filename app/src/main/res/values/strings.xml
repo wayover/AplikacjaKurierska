@@ -68,4 +68,7 @@
     <string name="English" translatable="false">English</string>
     <string name="Checkyourpackage">Check your package</string>
     <string name="Navigate">Navigate</string>
+    <string name="collectPck">Collect Pack</string>
+    <string name="NavToMagazine">Navigate To Magazine</string>
+    <string name="chkPendPack">Check pending packages</string>
 </resources>
