@@ -54,7 +54,7 @@ public class OdbierzPaczki extends AppCompatActivity {
 
 
 
-       //TODO
+
         Odbierz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

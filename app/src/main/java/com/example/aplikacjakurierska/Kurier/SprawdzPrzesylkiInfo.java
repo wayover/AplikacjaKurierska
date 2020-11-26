@@ -44,7 +44,7 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
         String id=getIntent().getStringExtra("id");
         String mail=getIntent().getStringExtra("mail");
 
-        fStore.collection("paczki").whereEqualTo("IdMagazynu",id).whereEqualTo("MailKuriera",mail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        fStore.collection("paczki").whereEqualTo("IdMagazynu",id).whereEqualTo("MailKuriera",mail).whereEqualTo("Odebrane","0").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
 
             public void onComplete(@NonNull Task<QuerySnapshot> task) {

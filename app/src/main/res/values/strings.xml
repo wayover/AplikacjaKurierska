@@ -71,4 +71,5 @@
     <string name="collectPck">Collect Pack</string>
     <string name="NavToMagazine">Navigate To Magazine</string>
     <string name="chkPendPack">Check pending packages</string>
+    <string name="Findtheshortestroute">Find the shortest route</string>
 </resources>
