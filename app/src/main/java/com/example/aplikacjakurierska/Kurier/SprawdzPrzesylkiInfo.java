@@ -74,19 +74,19 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
 
 
 
-        lvPrzesylkiInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-                Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
-                intent.putExtra("miasto",packlist.get(position).getMiasto());
-                intent.putExtra("ulica",packlist.get(position).getUlica());
-                intent.putExtra("nr",packlist.get(position).getNrdomu());
-                startActivity(intent);
-
-            }
-        });
+//        lvPrzesylkiInfo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//
+//                Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
+//                intent.putExtra("miasto",packlist.get(position).getMiasto());
+//                intent.putExtra("ulica",packlist.get(position).getUlica());
+//                intent.putExtra("nr",packlist.get(position).getNrdomu());
+//                startActivity(intent);
+//
+//            }
+//        });
 
         bCofnij.setOnClickListener(new View.OnClickListener() {
             @Override

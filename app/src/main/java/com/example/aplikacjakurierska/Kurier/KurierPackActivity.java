@@ -52,19 +52,19 @@ public class KurierPackActivity extends AppCompatActivity {
         ulica.setText(Sulica);
         numer.setText(Snumer);
 
-//        String loc= miasto.getText().toString()+" "+ulica.getText().toString()+" "+numer.getText().toString();
-//        Geocoder coder = new Geocoder(this);
-//        List<Address> address;
-//        try {
-//            address = coder.getFromLocationName(loc, 5);
-//            Address location = address.get(0);
-//            Double Lat=location.getLatitude();
-//            Double Long =location.getLongitude();
-//            x.setText(Lat.toString());
-//            y.setText(Long.toString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        String loc= miasto.getText().toString()+" "+ulica.getText().toString()+" "+numer.getText().toString();
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        try {
+            address = coder.getFromLocationName(loc, 5);
+            Address location = address.get(0);
+            Double Lat=location.getLatitude();
+            Double Long =location.getLongitude();
+            x.setText(Lat.toString());
+            y.setText(Long.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
