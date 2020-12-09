@@ -29,6 +29,21 @@ public class Paczka {
         IdMagazynu=idMagazynu;
     }
 
+    public Paczka(String miasto){
+        Miasto=miasto;
+        Id = "";
+        Imie = "";
+        Kod = "";
+        Nazwisko = "";
+        Mail = "";
+        Nrdomu = "";
+        NrMieszkania = "";
+        Telefon = "";
+        Ulica = "";
+        IdKlienta="";
+        IdMagazynu="";
+    }
+
     public String getIdMagazynu() {
         return IdMagazynu;
     }
