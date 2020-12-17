@@ -67,4 +67,11 @@
     <string name="NavToMagazine">Nawiguj do Magazynu</string>
     <string name="chkPendPack">Sprawdź oczekujące paczki</string>
     <string name="Findtheshortestroute">Znajdź najkrótszą trasę</string>
+    <string name="Packageunclaimed">Paczka nieodebrana</string>
+    <string name="Packagedelivered">Paczka dostarczona</string>
+    <string name="time">Czas</string>
+    <string name="Estimateddeliverytime">Ustaw Przewidywany czas dostarczenia</string>
+    <string name="PackageRejected">Paczka odrzucona</string>
+    <string name="wrongaddress">Błędny adres</string>
+    <string name="reason">Powód</string>
 </resources>

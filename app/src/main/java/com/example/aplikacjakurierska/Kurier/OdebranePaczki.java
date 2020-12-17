@@ -86,7 +86,7 @@ public class OdebranePaczki extends AppCompatActivity{
     FusedLocationProviderClient fusedLocationClient;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.R)
+   // @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,7 +124,7 @@ public class OdebranePaczki extends AppCompatActivity{
                 if(location!=null){
                     MyLong=location.getLongitude();
                     MyLat=location.getLatitude();
-                    test.setText("sta "+MyLat+" " +MyLong);
+                    test.setText(MyLat+" " +MyLong);
                 }
                 else{
                     test.setText("null");
@@ -183,6 +183,7 @@ public class OdebranePaczki extends AppCompatActivity{
                 intent.putExtra("miasto", packlist.get(position).getMiasto());
                 intent.putExtra("ulica", packlist.get(position).getUlica());
                 intent.putExtra("nr", packlist.get(position).getNrdomu());
+                intent.putExtra("id", packlist.get(position).getId());
                 startActivity(intent);
 
             }
@@ -213,17 +214,17 @@ public class OdebranePaczki extends AppCompatActivity{
                     Double Lat = null;
                     Double Long = null;
                     Pack pack = new Pack();
-                    String loc = packlist.get(i).getMiasto() + " " + packlist.get(i).getUlica() + " " + packlist.get(1).getNrdomu();
-                    Geocoder coder = new Geocoder(getApplicationContext());
-                    List<Address> address;
-                    try {
-                        address = coder.getFromLocationName(loc, 5);
-                        Address location = address.get(0);
-                        Lat = location.getLatitude();
-                        Long = location.getLongitude();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                        String loc = packlist.get(i).getMiasto() + " " + packlist.get(i).getUlica() + " " + packlist.get(1).getNrdomu();
+                        Geocoder coder = new Geocoder(getApplicationContext());
+                        List<Address> address;
+                        try {
+                            address = coder.getFromLocationName(loc, 5);
+                            Address location = address.get(0);
+                            Lat = location.getLatitude();
+                            Long = location.getLongitude();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
 
                     Location locc1 = new Location("");
@@ -249,7 +250,7 @@ public class OdebranePaczki extends AppCompatActivity{
 
 
                 String tmp = "";
-                for (int i = 0; i < dystans.size(); i++) {
+                for (int i = 0; i < dystans.size()/4; i++) {
                     tmp += dystans.get(i).paczka1.getMiasto() + " - " + dystans.get(i).paczka2.getMiasto() + " = " + dystans.get(i).distance + '\n';
                 }
 
@@ -272,7 +273,7 @@ public class OdebranePaczki extends AppCompatActivity{
             test.setText("");
             MyLat=loc.getLatitude();
             MyLong=loc.getLongitude();
-            test.setText("cha "+MyLat+" " +MyLong);
+            test.setText(MyLat+" " +MyLong);
             Trasa.setVisibility(View.VISIBLE);
         }
 

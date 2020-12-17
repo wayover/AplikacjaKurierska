@@ -1,25 +1,37 @@
 package com.example.aplikacjakurierska.Kurier;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.aplikacjakurierska.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.IOException;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class KurierPackActivity extends AppCompatActivity {
 
-    TextView miasto,ulica,numer,x,y;
-    Button Nawiguj;
+    TextView miasto,ulica,numer;
+    Button Nawiguj,Odebrana,Nieodebrana,Czas,Cofnij,Odrzucona,BlednyAdres;
+    FirebaseFirestore fStore;
+    FirebaseAuth mAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +40,84 @@ public class KurierPackActivity extends AppCompatActivity {
         miasto = findViewById(R.id.tvKurierPackMiasto);
         ulica = findViewById(R.id.tvKurierPckUlica);
         numer = findViewById(R.id.tvKurierPckNumer);
-        x = findViewById(R.id.tvKurierPckX);
-        y = findViewById(R.id.tvKurierPckY);
 
+
+        fStore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+
+
+        Czas=findViewById(R.id.bKuriterPackCzas);
         Nawiguj=findViewById(R.id.bKurierPackNavigate);
+        Odebrana=findViewById(R.id.bKurierPackDostarczona);
+        Nieodebrana=findViewById(R.id.bKurierPackBrakOdbiorcy);
+        Cofnij=findViewById(R.id.bKurierPackCofnij);
+        Odrzucona=findViewById(R.id.bKurierPackNieprzyjeta);
+        BlednyAdres=findViewById(R.id.bKurierPackBledyAdres);
 
         final String Smiasto=getIntent().getStringExtra("miasto");
         final String Sulica=getIntent().getStringExtra("ulica");
         final String Snumer=getIntent().getStringExtra("nr");
+        final String Sid=getIntent().getStringExtra("id");
+
+        Odrzucona.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), KurierOdrzucona.class);
+                intent.putExtra("miasto", Smiasto);
+                intent.putExtra("ulica", Sulica);
+                intent.putExtra("nr", Snumer);
+                intent.putExtra("id", Sid);
+                startActivity(intent);
+
+                startActivity(intent);
+            }
+        });
+
+
+        BlednyAdres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("Dostarczona","3");
+                        map.put("Odebrane","3");//TODO
+
+                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+                    }
+                });
+
+
+            }
+        });
+
+
+
+        Cofnij.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                startActivity(intent);
+            }
+        });
+
 
         Nawiguj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,19 +134,138 @@ public class KurierPackActivity extends AppCompatActivity {
         ulica.setText(Sulica);
         numer.setText(Snumer);
 
-        String loc= miasto.getText().toString()+" "+ulica.getText().toString()+" "+numer.getText().toString();
-        Geocoder coder = new Geocoder(this);
-        List<Address> address;
-        try {
-            address = coder.getFromLocationName(loc, 5);
-            Address location = address.get(0);
-            Double Lat=location.getLatitude();
-            Double Long =location.getLongitude();
-            x.setText(Lat.toString());
-            y.setText(Long.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
+        Czas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(KurierPackActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, final int hourOfDay, final int minute) {
+
+                        final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                        docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                                Map<String,Object> map = new HashMap<>();
+                                map.put("PrzewidywanyCzas",hourOfDay + ":" + minute);
+
+                                docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+
+                                    }
+                                });
+                            }
+                        });
+
+                    }
+                }, 0, 0, false);
+
+
+                timePickerDialog.show();
+            }
+        });
+
+        Nawiguj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("google.navigation:q="+Smiasto+" "+Sulica+" "+Snumer);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+
+        Odebrana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("Dostarczona","1");
+                        map.put("Odebrane","2");
+
+                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+
+        Nieodebrana.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("Dostarczona","2");
+                        //map.put("Odebrane","0");
+
+                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+//        String loc= miasto.getText().toString()+" "+ulica.getText().toString()+" "+numer.getText().toString();
+//        Geocoder coder = new Geocoder(this);
+//        List<Address> address;
+//        try {
+//            address = coder.getFromLocationName(loc, 5);
+//            Address location = address.get(0);
+//            Double Lat=location.getLatitude();
+//            Double Long =location.getLongitude();
+//            x.setText(Lat.toString());
+//            y.setText(Long.toString());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }

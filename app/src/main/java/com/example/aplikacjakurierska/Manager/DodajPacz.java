@@ -192,6 +192,7 @@ public class DodajPacz extends AppCompatActivity {
                     userInfo.put("Kod",Kod);
                     userInfo.put("Ulica",Ulica);
                     userInfo.put("NrDomu",NrDomu);
+                    userInfo.put("Dostarczona","0");
                     if(NrMieszkania.isEmpty()) {
                         userInfo.put("NrMieszkania", "0");
                     }else{

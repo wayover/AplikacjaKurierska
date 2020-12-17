@@ -72,4 +72,11 @@
     <string name="NavToMagazine">Navigate To Magazine</string>
     <string name="chkPendPack">Check pending packages</string>
     <string name="Findtheshortestroute">Find the shortest route</string>
+    <string name="Packageunclaimed">Package unclaimed</string>
+    <string name="Packagedelivered">Package delivered</string>
+    <string name="time">Time</string>
+    <string name="Estimateddeliverytime">Set Estimated delivery time</string>
+    <string name="PackageRejected">Package Rejected</string>
+    <string name="wrongaddress">Wrong address</string>
+    <string name="reason">Reason</string>
 </resources>
