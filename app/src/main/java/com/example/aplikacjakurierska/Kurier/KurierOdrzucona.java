@@ -106,7 +106,7 @@ public class KurierOdrzucona extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","Odrzucona");//TODO
+                        map.put("Dostarczona","Odrzucona");
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -120,17 +120,14 @@ public class KurierOdrzucona extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
+
                     }
                 });
 
 
 
 
-                Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
-                intent.putExtra("miasto", Smiasto);
-                intent.putExtra("ulica", Sulica);
-                intent.putExtra("nr", Snumer);
-                intent.putExtra("id", Sid);
+                Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
                 startActivity(intent);
 
 

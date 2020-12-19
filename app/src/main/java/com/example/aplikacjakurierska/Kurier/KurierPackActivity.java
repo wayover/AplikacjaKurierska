@@ -85,7 +85,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","BlednyAdres");//TODO
+                        map.put("Dostarczona","BlednyAdres");
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

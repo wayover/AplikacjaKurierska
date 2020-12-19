@@ -35,11 +35,12 @@ public class KurierActivity extends AppCompatActivity {
             }
         });
 
-        //todo
+
         bOdrzuconeZlyAdres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), KurierOdrzuconeZlyAdres.class);
+                startActivity(intent);
             }
         });
 

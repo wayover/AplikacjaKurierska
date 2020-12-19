@@ -27,38 +27,35 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class KurierNieodebraneInfo extends AppCompatActivity {
+public class KurierOdrzuconeZlyAdresInfo extends AppCompatActivity {
+
 
     Spinner sMagazyny;
-    Button Cofnij,ZwrocDoMagaynu,DostarczPonownie;
+    Button Cofnij,ZwrocDoMagaynu;
     FirebaseFirestore fStore;
     ArrayList<MagazynClass> listaMagazyn;
     ArrayList<String>MagazynList;
     String miasto,ulica,numer,id;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kurier_nieodebrane_info);
+        setContentView(R.layout.activity_kurier_odrzucone_zly_adres_info);
+
+        sMagazyny=findViewById(R.id.sKurierOdrzuconeInfoMagazyny);
+        Cofnij=findViewById(R.id.bKurierOdrzuconeInfoCofnij);
+        ZwrocDoMagaynu=findViewById(R.id.bKurierOdrzuconeInfoZwrot);
 
         fStore= FirebaseFirestore.getInstance();
-
-        sMagazyny=findViewById(R.id.sKurierNieodebraneMagazyn);
-        Cofnij=findViewById(R.id.bKurierNieodebraneInfoCofnij);
-        ZwrocDoMagaynu=findViewById(R.id.bKurierNieodebraneZwrot);
-        DostarczPonownie=findViewById(R.id.bKurierNieodebraneDostarcz);
-
-
         final String Sid=getIntent().getStringExtra("id");
-
 
         Cofnij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), KurierActivity.class);
-               startActivity(intent);
+                startActivity(intent);
             }
         });
+
 
 
         MagazynList=new ArrayList<>();
@@ -86,40 +83,6 @@ public class KurierNieodebraneInfo extends AppCompatActivity {
 
         ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,MagazynList);
         sMagazyny.setAdapter(adapter);
-
-
-        DostarczPonownie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
-                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                        Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","0");
-
-                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
-
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
-                            }
-                        });
-                        Intent intent = new Intent(getApplicationContext(), KurierNieodebrane.class);
-                        startActivity(intent);
-                    }
-                });
-            }
-        });
 
 
 
