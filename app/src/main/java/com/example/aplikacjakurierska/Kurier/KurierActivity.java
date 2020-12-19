@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class KurierActivity extends AppCompatActivity {
 
 
-    Button bWyloguj,bSprawdzPrzesylki,bOczekujacePaczki;
+    Button bWyloguj,bSprawdzPrzesylki,bOczekujacePaczki,bNieodebrane,bOdrzuconeZlyAdres;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,30 @@ public class KurierActivity extends AppCompatActivity {
 
         bOczekujacePaczki=findViewById(R.id.bKurierSprawdzNieodebrane);
         bSprawdzPrzesylki=findViewById(R.id.bKurierSprawdzPrzesylki);
+        bNieodebrane=findViewById(R.id.bKurierNieodebrane);
+        bOdrzuconeZlyAdres=findViewById(R.id.bKurierOdrzuconeZlyAdres);
+
+
+        bNieodebrane.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), KurierNieodebrane.class);
+                startActivity(intent);
+            }
+        });
+
+        //todo
+        bOdrzuconeZlyAdres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
+
+
         bOczekujacePaczki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

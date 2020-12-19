@@ -79,4 +79,8 @@
     <string name="PackageRejected">Package Rejected</string>
     <string name="wrongaddress">Wrong address</string>
     <string name="reason">Reason</string>
+    <string name="UnclaimedPackage">Unclaimed Packages</string>
+    <string name="RejectedWrongaddress">Rejected/Wrong address</string>
+    <string name="ReturntoMagazine">Return to Magazine</string>
+    <string name="Deliveragain">Deliver again</string>
 </resources>

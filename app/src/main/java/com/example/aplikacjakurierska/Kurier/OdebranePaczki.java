@@ -142,7 +142,7 @@ public class OdebranePaczki extends AppCompatActivity{
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 mail = (String) task.getResult().get("Email");
 
-                fStore.collection("paczki").whereEqualTo("Odebrane", "1").whereEqualTo("MailKuriera", mail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                fStore.collection("paczki").whereEqualTo("Odebrane", "1").whereEqualTo("Dostarczona", "0").whereEqualTo("MailKuriera", mail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
 
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {

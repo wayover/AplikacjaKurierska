@@ -202,7 +202,7 @@ public class DodajPacz extends AppCompatActivity {
 
 
                     if(a==0){
-                        Toast.makeText(getApplicationContext(), "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Musisz Wybrać Magazyn", Toast.LENGTH_LONG).show();
                     }
                     userInfo.put("IdMagazynu",listaMagazyn.get(a).getId());
                     df.set(userInfo).addOnFailureListener(new OnFailureListener() {

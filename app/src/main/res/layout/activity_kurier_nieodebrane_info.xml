@@ -4,65 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kurier.KurierActivity">
+    tools:context=".Kurier.KurierNieodebraneInfo">
 
     <Button
-        android:id="@+id/bKWyloguj"
+        android:id="@+id/bKurierNieodebraneInfoCofnij"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/Wyloguj"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/Cofnij"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bKurierSprawdzPrzesylki"
+        android:id="@+id/bKurierNieodebraneDostarcz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/Checkyourpackage"
+        android:text="@string/Deliveragain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bKurierSprawdzNieodebrane"
+        android:id="@+id/bKurierNieodebraneZwrot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/chkPendPack"
+        android:text="@string/ReturntoMagazine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bKurierSprawdzPrzesylki" />
+        app:layout_constraintTop_toBottomOf="@+id/sKurierNieodebraneMagazyn" />
 
-    <Button
-        android:id="@+id/bKurierNieodebrane"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/UnclaimedPackage"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/Magazine"
+        app:layout_constraintBottom_toBottomOf="@+id/sKurierNieodebraneMagazyn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bKurierSprawdzNieodebrane" />
+        app:layout_constraintTop_toTopOf="@+id/sKurierNieodebraneMagazyn" />
 
-    <Button
-        android:id="@+id/bKurierOdrzuconeZlyAdres"
+    <Spinner
+        android:id="@+id/sKurierNieodebraneMagazyn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/RejectedWrongaddress"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bKurierNieodebrane" />
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/bKurierNieodebraneDostarcz" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,4 +74,8 @@
     <string name="PackageRejected">Paczka odrzucona</string>
     <string name="wrongaddress">Błędny adres</string>
     <string name="reason">Powód</string>
+    <string name="UnclaimedPackage">Nieodebrane Paczki</string>
+    <string name="RejectedWrongaddress">Odrzucone/Zły adres</string>
+    <string name="ReturntoMagazine">Zwróć do magazynu</string>
+    <string name="Deliveragain">Dostarcz ponownie</string>
 </resources>

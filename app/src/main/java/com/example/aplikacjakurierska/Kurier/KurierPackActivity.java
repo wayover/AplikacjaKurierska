@@ -85,8 +85,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","3");
-                        map.put("Odebrane","3");//TODO
+                        map.put("Dostarczona","BlednyAdres");//TODO
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -98,9 +97,11 @@ public class KurierPackActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-
                             }
                         });
+
+                        Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                        startActivity(intent);
                     }
                 });
 
@@ -166,6 +167,8 @@ public class KurierPackActivity extends AppCompatActivity {
 
                                     }
                                 });
+                                Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                                startActivity(intent);
                             }
                         });
 
@@ -198,8 +201,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","1");
-                        map.put("Odebrane","2");
+                        map.put("Dostarczona","Odebrane");//todo w userze
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -214,6 +216,8 @@ public class KurierPackActivity extends AppCompatActivity {
 
                             }
                         });
+                        Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                        startActivity(intent);
                     }
                 });
             }
@@ -232,8 +236,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","2");
-                        //map.put("Odebrane","0");
+                        map.put("Dostarczona","Nieodebrane");
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
@@ -248,6 +251,8 @@ public class KurierPackActivity extends AppCompatActivity {
 
                             }
                         });
+                        Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                        startActivity(intent);
                     }
                 });
             }

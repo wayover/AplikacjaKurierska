@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.aplikacjakurierska.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -98,6 +99,33 @@ public class KurierOdrzucona extends AppCompatActivity {
                     }
                 });
                 Toast.makeText(getApplicationContext(), "Powod dodany", Toast.LENGTH_LONG).show();
+
+
+                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("Dostarczona","Odrzucona");//TODO
+
+                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                });
+
+
+
+
                 Intent intent = new Intent(getApplicationContext(), KurierPackActivity.class);
                 intent.putExtra("miasto", Smiasto);
                 intent.putExtra("ulica", Sulica);
