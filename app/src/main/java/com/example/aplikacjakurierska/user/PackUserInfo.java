@@ -8,9 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.aplikacjakurierska.Manager.SprawdzPaczki;
 import com.example.aplikacjakurierska.R;
-import com.example.aplikacjakurierska.ui.dashboard.DashboardFragment;
+import com.example.aplikacjakurierska.ui.PaczkiPrzypisane.PrzypisaneFragment;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PackUserInfo extends AppCompatActivity {
@@ -57,7 +56,7 @@ public class PackUserInfo extends AppCompatActivity {
         cofnij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DashboardFragment.class);
+                Intent intent = new Intent(getApplicationContext(), PrzypisaneFragment.class);
                 startActivity(intent);
             }
         });

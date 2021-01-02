@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kurier.KurierOdrzuconeZlyAdresInfo"></activity>
+        <activity android:name=".Manager.ZwroconePaczkiInfo"></activity>
+        <activity android:name=".Manager.ZwroconePaczki" />
+        <activity android:name=".user.UserPrzypisaneInfo" />
+        <activity android:name=".Kurier.KurierOdrzuconeZlyAdresInfo" />
         <activity android:name=".Kurier.KurierOdrzuconeZlyAdres" />
         <activity android:name=".Kurier.KurierNieodebraneInfo" />
         <activity android:name=".Kurier.KurierNieodebrane" />
@@ -23,7 +26,6 @@
         <activity android:name=".Kurier.KurierPackActivity" />
         <activity android:name=".Kurier.SprawdzPrzesylkiInfo" />
         <activity android:name=".Kurier.SprawdzPrzesylki" />
-        <activity android:name=".login.ZmianaJezyka" />
         <activity android:name=".Admin.MagazynInfo" />
         <activity android:name=".Admin.SprawdzMagazyn" />
         <activity android:name=".Admin.DodajMagazyn" />

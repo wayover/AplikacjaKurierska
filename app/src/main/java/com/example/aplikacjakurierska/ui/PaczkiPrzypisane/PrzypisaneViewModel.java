@@ -1,14 +1,14 @@
-package com.example.aplikacjakurierska.ui.dashboard;
+package com.example.aplikacjakurierska.ui.PaczkiPrzypisane;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class PrzypisaneViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public PrzypisaneViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Twoje paczki");
     }

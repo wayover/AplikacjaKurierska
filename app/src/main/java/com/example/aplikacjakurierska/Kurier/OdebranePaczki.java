@@ -72,7 +72,7 @@ public class OdebranePaczki extends AppCompatActivity{
     ListView lvPaczki;
     FirebaseFirestore fStore;
     FirebaseAuth mAuth;
-    String mail, Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta, IdMagazyn;
+    String mail, Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta, IdMagazyn,Zwrot="";
     Double MyLat, MyLong;
     ArrayList<String> paczki;
     ArrayList<Paczka> packlist;
@@ -159,10 +159,16 @@ public class OdebranePaczki extends AppCompatActivity{
                             Ulica = (String) document.get("Ulica");
                             IdKlienta = (String) document.get("IdKlienta");
                             IdMagazyn = (String) document.get("IdMagazynu");
+                            if(document.get("ZwrotDoMagazynu")==null){
+                                Zwrot="0";
+                            }else {
+                                Zwrot = (String) document.get("ZwrotDoMagazynu");
+                            }
 
-                            Paczka pck = new Paczka(Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta, IdMagazyn);
+                            Paczka pck = new Paczka(Id, Imie, Kod, Nazwisko, Mail, Miasto, Nrdomu, NrMieszkania, Telefon, Ulica, IdKlienta, IdMagazyn,Zwrot);
                             packlist.add(pck);
                             paczki.add(Miasto + " " + Ulica + " " + Nrdomu);
+
                         }
 
                         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, paczki);
@@ -184,6 +190,8 @@ public class OdebranePaczki extends AppCompatActivity{
                 intent.putExtra("ulica", packlist.get(position).getUlica());
                 intent.putExtra("nr", packlist.get(position).getNrdomu());
                 intent.putExtra("id", packlist.get(position).getId());
+                intent.putExtra("zwrot", packlist.get(position).getZwrot());
+
                 startActivity(intent);
 
             }

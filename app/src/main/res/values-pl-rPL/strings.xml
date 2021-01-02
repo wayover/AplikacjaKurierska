@@ -70,7 +70,7 @@
     <string name="Packageunclaimed">Paczka nieodebrana</string>
     <string name="Packagedelivered">Paczka dostarczona</string>
     <string name="time">Czas</string>
-    <string name="Estimateddeliverytime">Ustaw Przewidywany czas dostarczenia</string>
+    <string name="SetEstimateddeliverytime">Ustaw Przewidywany czas dostarczenia</string>
     <string name="PackageRejected">Paczka odrzucona</string>
     <string name="wrongaddress">Błędny adres</string>
     <string name="reason">Powód</string>
@@ -78,4 +78,10 @@
     <string name="RejectedWrongaddress">Odrzucone/Zły adres</string>
     <string name="ReturntoMagazine">Zwróć do magazynu</string>
     <string name="Deliveragain">Dostarcz ponownie</string>
+    <string name="Estimateddeliverytime">Przewidywany czas dostarczenia</string>
+    <string name="CourierPhone">Telefon kuriera</string>
+    <string name="Confirmdelivery">Potwierdź Dostarczenie</string>
+    <string name="Undelivered">Niedostarczona</string>
+    <string name="ReturnedtotheMagazine">Zwrócona do magazynu</string>
+    <string name="Returntosender">Zwróć do nadawcy</string>
 </resources>

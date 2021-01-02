@@ -98,6 +98,7 @@ public class KurierNieodebraneInfo extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
 
+
                         Map<String,Object> map = new HashMap<>();
                         map.put("Dostarczona","0");
 
@@ -140,6 +141,12 @@ public class KurierNieodebraneInfo extends AppCompatActivity {
                             map.put("Miasto", listaMagazyn.get(a).getMiasto());
                             map.put("Ulica", listaMagazyn.get(a).getUlica());
                             map.put("NrDomu", listaMagazyn.get(a).getNumer());
+                            map.put("IdMagazynu", listaMagazyn.get(a).getId());
+                            map.put("IdKlienta","Brak");
+                            map.put("ZwrotDoMagazynu", "1");
+                            map.put("Telefon", "Brak");
+                            map.put("Imie", "Brak");
+                            map.put("Nazwisko", "Brak");
 
 
                             docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {

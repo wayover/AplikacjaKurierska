@@ -75,7 +75,7 @@
     <string name="Packageunclaimed">Package unclaimed</string>
     <string name="Packagedelivered">Package delivered</string>
     <string name="time">Time</string>
-    <string name="Estimateddeliverytime">Set Estimated delivery time</string>
+    <string name="SetEstimateddeliverytime">Set Estimated delivery time</string>
     <string name="PackageRejected">Package Rejected</string>
     <string name="wrongaddress">Wrong address</string>
     <string name="reason">Reason</string>
@@ -83,4 +83,10 @@
     <string name="RejectedWrongaddress">Rejected/Wrong address</string>
     <string name="ReturntoMagazine">Return to Magazine</string>
     <string name="Deliveragain">Deliver again</string>
+    <string name="Estimateddeliverytime">Estimated delivery time</string>
+    <string name="CourierPhone">Courier phone</string>
+    <string name="Confirmdelivery">Confirm delivery</string>
+    <string name="Undelivered">Undelivered</string>
+    <string name="ReturnedtotheMagazine">Returned to the magazine</string>
+    <string name="Returntosender">Return to sender</string>
 </resources>

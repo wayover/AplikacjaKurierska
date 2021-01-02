@@ -29,7 +29,7 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
     FirebaseFirestore fStore;
     ArrayList<String> paczki;
     ArrayList<Paczka> packlist;
-    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazyn;
+    String Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazyn,Zwrot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class SprawdzPrzesylkiInfo extends AppCompatActivity {
                     Ulica=(String)document.get("Ulica");
                     IdKlienta=(String)document.get("IdKlienta");
                     IdMagazyn=(String)document.get("IdMagazynu");
+
 
                     Paczka pck=new Paczka(Id,Imie,Kod,Nazwisko,Mail,Miasto,Nrdomu,NrMieszkania,Telefon,Ulica,IdKlienta,IdMagazyn);
                     packlist.add(pck);

@@ -13,6 +13,7 @@ public class Paczka {
     String Ulica;
     String IdKlienta;
     String IdMagazynu;
+    String Zwrot;
 
     public Paczka(String id, String imie, String kod, String nazwisko, String mail, String miasto, String nrdomu, String nrMieszkania, String telefon, String ulica,String idKlienta,String idMagazynu) {
         Id = id;
@@ -27,6 +28,29 @@ public class Paczka {
         Ulica = ulica;
         IdKlienta=idKlienta;
         IdMagazynu=idMagazynu;
+    }
+    public Paczka(String id, String imie, String kod, String nazwisko, String mail, String miasto, String nrdomu, String nrMieszkania, String telefon, String ulica,String idKlienta,String idMagazynu,String zwrot) {
+        Id = id;
+        Imie = imie;
+        Kod = kod;
+        Nazwisko = nazwisko;
+        Mail = mail;
+        Miasto = miasto;
+        Nrdomu = nrdomu;
+        NrMieszkania = nrMieszkania;
+        Telefon = telefon;
+        Ulica = ulica;
+        IdKlienta=idKlienta;
+        IdMagazynu=idMagazynu;
+        Zwrot=zwrot;
+    }
+
+    public String getZwrot() {
+        return Zwrot;
+    }
+
+    public void setZwrot(String zwrot) {
+        Zwrot = zwrot;
     }
 
     public Paczka(String miasto){

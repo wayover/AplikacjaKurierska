@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    Button bWyloguj,bDodajPacz,bSprawdz;
+    Button bWyloguj,bDodajPacz,bSprawdz,bZwrocone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,7 @@ public class ManagerActivity extends AppCompatActivity {
         bWyloguj=findViewById(R.id.bMWyloguj);
         bDodajPacz=findViewById(R.id.bManDodajPaczke);
         bSprawdz=findViewById(R.id.bManaSprawdz);
+        bZwrocone=findViewById(R.id.bManaZwrocona);
         bDodajPacz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,9 +53,8 @@ public class ManagerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(getApplicationContext(), R.string.wylogowany, duration);
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.wylogowany, Toast.LENGTH_SHORT);
                 toast.show();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(), Login.class);
@@ -66,6 +66,13 @@ public class ManagerActivity extends AppCompatActivity {
         });
 
 
+        bZwrocone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ZwroconePaczki.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

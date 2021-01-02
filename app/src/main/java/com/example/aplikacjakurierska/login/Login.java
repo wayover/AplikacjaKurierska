@@ -56,14 +56,8 @@ public class Login extends AppCompatActivity {
         etHas=findViewById(R.id.etrHaslo);
         etLog=findViewById(R.id.etLogin);
         pbLogin=findViewById(R.id.pbLogin);
-        bJezyk=findViewById(R.id.bZmienJezyk);
 
-        bJezyk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ZmianaJezyka.class));
-            }
-        });
+
 
 
         bZarejestruj=findViewById(R.id.bZarejestruj);

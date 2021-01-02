@@ -27,7 +27,7 @@ import java.util.Map;
 public class KurierPackActivity extends AppCompatActivity {
 
     TextView miasto,ulica,numer;
-    Button Nawiguj,Odebrana,Nieodebrana,Czas,Cofnij,Odrzucona,BlednyAdres;
+    Button Nawiguj,Odebrana,Nieodebrana,Czas,Cofnij,Odrzucona,BlednyAdres,Zwroc;
     FirebaseFirestore fStore;
     FirebaseAuth mAuth;
 
@@ -53,11 +53,15 @@ public class KurierPackActivity extends AppCompatActivity {
         Cofnij=findViewById(R.id.bKurierPackCofnij);
         Odrzucona=findViewById(R.id.bKurierPackNieprzyjeta);
         BlednyAdres=findViewById(R.id.bKurierPackBledyAdres);
+        Zwroc=findViewById(R.id.bKurierPackActivityZwroc);
 
         final String Smiasto=getIntent().getStringExtra("miasto");
         final String Sulica=getIntent().getStringExtra("ulica");
         final String Snumer=getIntent().getStringExtra("nr");
         final String Sid=getIntent().getStringExtra("id");
+        final String SZwrot=getIntent().getStringExtra("zwrot");
+
+
 
         Odrzucona.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +74,51 @@ public class KurierPackActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 startActivity(intent);
+            }
+        });
+
+
+        if(SZwrot.equals("1")){
+            Odebrana.setVisibility(View.GONE);
+            Nieodebrana.setVisibility(View.GONE);
+            Czas.setVisibility(View.GONE);
+            Odrzucona.setVisibility(View.GONE);
+            BlednyAdres.setVisibility(View.GONE);
+            Zwroc.setVisibility(View.VISIBLE);
+        }
+
+        Zwroc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final DocumentReference docfer=fStore.collection("paczki").document(Sid);
+                docfer.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("Dostarczona","ZwroconaDoMagazynu");
+
+                        docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Succes", Toast.LENGTH_LONG).show();
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                        Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                        startActivity(intent);
+                    }
+                });
+
+
             }
         });
 
@@ -201,7 +250,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","Odebrane");//todo w userze
+                        map.put("Dostarczona","Odebrane");//TODO w userze
 
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
