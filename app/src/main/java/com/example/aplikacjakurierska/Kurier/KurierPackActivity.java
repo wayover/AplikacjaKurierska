@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,7 +65,6 @@ public class KurierPackActivity extends AppCompatActivity {
         final String Snumer=getIntent().getStringExtra("nr");
         final String Sid=getIntent().getStringExtra("id");
         final String SZwrot=getIntent().getStringExtra("zwrot");
-
 
 
         Odrzucona.setOnClickListener(new View.OnClickListener() {
@@ -185,7 +189,6 @@ public class KurierPackActivity extends AppCompatActivity {
         numer.setText(Snumer);
 
 
-
         Czas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -251,7 +254,6 @@ public class KurierPackActivity extends AppCompatActivity {
 
                         Map<String,Object> map = new HashMap<>();
                         map.put("Dostarczona","Odebrane");//TODO w userze
-
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -265,10 +267,32 @@ public class KurierPackActivity extends AppCompatActivity {
 
                             }
                         });
-                        Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
-                        startActivity(intent);
+
                     }
                 });
+
+
+                DocumentReference df=fStore.collection("Dostarczona").document();
+                Map<String,Object> MagazynInfo= new HashMap<>();
+                MagazynInfo.put("IdPaczki",Sid);
+                MagazynInfo.put("Potweirdzone","0");
+                MagazynInfo.put("Dzien",Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+                MagazynInfo.put("Miesiac",Calendar.getInstance().get(Calendar.MONTH)+1);
+                MagazynInfo.put("Rok",Calendar.getInstance().get(Calendar.YEAR));
+                MagazynInfo.put("Godzina",Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+
+
+                df.set(MagazynInfo).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+                Intent intent = new Intent(getApplicationContext(), OdebranePaczki.class);
+                startActivity(intent);
+
             }
         });
 
@@ -323,5 +347,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
     }
+
+
 }
 
