@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.aplikacjakurierska.R;
+import com.example.aplikacjakurierska.ui.PaczkiPrzypisane.PrzypisaneFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -18,11 +19,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.NumberFormat;
+import java.util.Calendar;
+
 public class UserPrzypisaneInfo extends AppCompatActivity {
 
-    String mail,id;
+    String mail,id,IdPotwierdzenia;
+    Number Rok,Miesiac,Dzien,Godzina,AktRok,AktMiesiac,AktDzien,AktGodzina;
+    Long IRok,IMiesiac,IDzien,IGodzina,IAktRok,IAktMiesiac,IAktDzien,IAktGodzina;
     Button cofnij,dostarczona,niedostarczona;
-    TextView czas,telefon;
+    TextView czas,telefon,GodzinaInfo,GodzinaDostarczenia;
     FirebaseFirestore fStore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,8 @@ public class UserPrzypisaneInfo extends AppCompatActivity {
         niedostarczona=findViewById(R.id.bUserPrzypisaneNiedotarla);
         czas=findViewById(R.id.tvUserPrzypisaneCzas);
         telefon=findViewById(R.id.tvUserPrzypisaneTelefonKuriera);
+        GodzinaInfo=findViewById(R.id.tvGodzinaDostarczenia);
+        GodzinaDostarczenia=findViewById(R.id.tvUserPrzypisaneGodzianDostarczenia);
 
 
         fStore.collection("users").whereEqualTo("Email", mail).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -55,8 +63,8 @@ public class UserPrzypisaneInfo extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.getResult().get("Dostarczona").toString().equals("Odebrane")){
-                    dostarczona.setVisibility(View.VISIBLE);
-                    niedostarczona.setVisibility(View.VISIBLE);
+//                    dostarczona.setVisibility(View.VISIBLE);
+//                    niedostarczona.setVisibility(View.VISIBLE);
                 }
 
                 if(task.getResult().get("PrzewidywanyCzas")==null){
@@ -66,6 +74,73 @@ public class UserPrzypisaneInfo extends AppCompatActivity {
                 }
             }
         });
+
+        fStore.collection("Dostarczona").whereEqualTo("IdPaczki",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                for(QueryDocumentSnapshot document :task.getResult()) {
+                    Rok = (Number) document.get("Rok");
+                    Miesiac = (Number)document.get("Miesiac");
+                    Dzien = (Number)document.get("Dzien");
+                    Godzina = (Number)document.get("Godzina");
+                    IdPotwierdzenia =  document.getId();
+//                    GodzinaInfo.setVisibility(View.VISIBLE);
+//                    GodzinaDostarczenia.setVisibility(View.VISIBLE);
+                    GodzinaDostarczenia.setText(Rok+"/"+Miesiac+"/"+Dzien+" "+Godzina);
+
+                    AktDzien=Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+                    AktMiesiac=Calendar.getInstance().get(Calendar.MONTH)+1;
+                    AktRok=Calendar.getInstance().get(Calendar.YEAR);
+                    AktGodzina=Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+
+                    IRok=Rok.longValue();
+                    IMiesiac=Miesiac.longValue();
+                    IDzien=Dzien.longValue();
+                    IGodzina=Godzina.longValue();
+                    IAktRok=AktRok.longValue();
+                    IAktMiesiac=AktMiesiac.longValue();
+                    IAktDzien=AktDzien.longValue();
+                    IAktGodzina=AktGodzina.longValue();
+                    if(IAktRok+IRok==IRok*2&&IAktMiesiac==IMiesiac&&IAktDzien==IDzien&&IAktGodzina-IGodzina<24){
+                        GodzinaInfo.setVisibility(View.VISIBLE);
+                        GodzinaDostarczenia.setVisibility(View.VISIBLE);
+                        dostarczona.setVisibility(View.VISIBLE);
+                        niedostarczona.setVisibility(View.VISIBLE);
+                    }else if(IAktRok+IRok==IRok*2&&IAktMiesiac==IMiesiac&&IAktDzien-IDzien==1&&IGodzina-IAktGodzina<24){
+                        GodzinaInfo.setVisibility(View.VISIBLE);
+                        GodzinaDostarczenia.setVisibility(View.VISIBLE);
+                        dostarczona.setVisibility(View.VISIBLE);
+                        niedostarczona.setVisibility(View.VISIBLE);
+                    }else if(IAktRok+IRok==IRok*2&&IAktMiesiac-IMiesiac==1&&IDzien-IAktDzien>26&&IGodzina-IAktGodzina<24){//do sprawdzenia
+                        GodzinaInfo.setVisibility(View.VISIBLE);
+                        GodzinaDostarczenia.setVisibility(View.VISIBLE);
+                        dostarczona.setVisibility(View.VISIBLE);
+                        niedostarczona.setVisibility(View.VISIBLE);
+                    }else if(IAktRok+IRok==IRok*2+1&&IMiesiac-IAktMiesiac==11&&IDzien-IAktDzien==30&&IGodzina-IAktGodzina<24){//do sprawdzenia
+                        GodzinaInfo.setVisibility(View.VISIBLE);
+                        GodzinaDostarczenia.setVisibility(View.VISIBLE);
+                        dostarczona.setVisibility(View.VISIBLE);
+                        niedostarczona.setVisibility(View.VISIBLE);
+                    }
+
+
+
+
+                }
+            }
+        });
+
+
+
+        cofnij.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PrzypisaneFragment.class);
+                startActivity(intent);
+            }
+        });
+
 
         telefon.setOnClickListener(new View.OnClickListener() {
             @Override
