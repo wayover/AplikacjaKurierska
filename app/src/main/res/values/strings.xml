@@ -89,4 +89,5 @@
     <string name="Undelivered">Undelivered</string>
     <string name="ReturnedtotheMagazine">Returned to the magazine</string>
     <string name="Returntosender">Return to sender</string>
+    <string name="PackNDeliver">If the package hasn\'t been delivered, contact the hotline</string>
 </resources>

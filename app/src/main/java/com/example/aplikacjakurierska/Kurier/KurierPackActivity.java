@@ -253,7 +253,7 @@ public class KurierPackActivity extends AppCompatActivity {
 
 
                         Map<String,Object> map = new HashMap<>();
-                        map.put("Dostarczona","Odebrane");//TODO w userze
+                        map.put("Dostarczona","Odebrane");
                         docfer.update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -275,7 +275,7 @@ public class KurierPackActivity extends AppCompatActivity {
                 DocumentReference df=fStore.collection("Dostarczona").document();
                 Map<String,Object> MagazynInfo= new HashMap<>();
                 MagazynInfo.put("IdPaczki",Sid);
-                MagazynInfo.put("Potweirdzone","0");
+                MagazynInfo.put("Potwierdzone","0");
                 MagazynInfo.put("Dzien",Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
                 MagazynInfo.put("Miesiac",Calendar.getInstance().get(Calendar.MONTH)+1);
                 MagazynInfo.put("Rok",Calendar.getInstance().get(Calendar.YEAR));
