@@ -85,4 +85,9 @@
     <string name="ReturnedtotheMagazine">Zwrócona do magazynu</string>
     <string name="Returntosender">Zwróć do nadawcy</string>
     <string name="PackNDeliver">Jeżeli paczka nie dotarła skontaktuj się z infolinią</string>
+    <string name="Deliveredpackages">Dostarczone paczki</string>
+    <string name="Confirmed">Potwierdzone</string>
+    <string name="Reportednondelivery">Zgłoszone niedostarczenie</string>
+    <string name="Deliverytime">Czas dostarczenia</string>
+    <string name="ClientPhont">Numer Klienta</string>
 </resources>

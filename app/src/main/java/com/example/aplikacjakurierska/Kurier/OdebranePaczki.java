@@ -191,6 +191,7 @@ public class OdebranePaczki extends AppCompatActivity{
                 intent.putExtra("nr", packlist.get(position).getNrdomu());
                 intent.putExtra("id", packlist.get(position).getId());
                 intent.putExtra("zwrot", packlist.get(position).getZwrot());
+                intent.putExtra("numer", packlist.get(position).getTelefon());
 
                 startActivity(intent);
 
@@ -258,7 +259,7 @@ public class OdebranePaczki extends AppCompatActivity{
 
 
                 String tmp = "";
-                for (int i = 0; i < dystans.size()/4; i++) {
+                for (int i = 0; i < dystans.size(); i++) {
                     tmp += dystans.get(i).paczka1.getMiasto() + " - " + dystans.get(i).paczka2.getMiasto() + " = " + dystans.get(i).distance + '\n';
                 }
 

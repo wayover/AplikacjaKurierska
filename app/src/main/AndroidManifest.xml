@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Manager.ZwroconePaczkiInfo"></activity>
+        <activity android:name=".Manager.ManagerDostarczonePaczkiInfo"></activity>
+        <activity android:name=".Manager.ManagerDostarczonePaczki" />
+        <activity android:name=".Manager.ZwroconePaczkiInfo" />
         <activity android:name=".Manager.ZwroconePaczki" />
         <activity android:name=".user.UserPrzypisaneInfo" />
         <activity android:name=".Kurier.KurierOdrzuconeZlyAdresInfo" />

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    Button bWyloguj,bDodajPacz,bSprawdz,bZwrocone;
+    Button bWyloguj,bDodajPacz,bSprawdz,bZwrocone,bDostarczone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,17 @@ public class ManagerActivity extends AppCompatActivity {
         bDodajPacz=findViewById(R.id.bManDodajPaczke);
         bSprawdz=findViewById(R.id.bManaSprawdz);
         bZwrocone=findViewById(R.id.bManaZwrocona);
+        bDostarczone=findViewById(R.id.bManaDostarczone);
+
+        bDostarczone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ManagerDostarczonePaczki.class);
+                startActivity(intent);
+            }
+        });
+
+
         bDodajPacz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

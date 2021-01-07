@@ -90,4 +90,9 @@
     <string name="ReturnedtotheMagazine">Returned to the magazine</string>
     <string name="Returntosender">Return to sender</string>
     <string name="PackNDeliver">If the package hasn\'t been delivered, contact the hotline</string>
+    <string name="Deliveredpackages">Delivered packages</string>
+    <string name="Confirmed">Confirmed</string>
+    <string name="Reportednondelivery">Reported non-delivery</string>
+    <string name="Deliverytime">Delivery time</string>
+    <string name="ClientPhont">Client phone</string>
 </resources>

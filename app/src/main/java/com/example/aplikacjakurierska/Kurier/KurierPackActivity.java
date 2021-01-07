@@ -65,6 +65,7 @@ public class KurierPackActivity extends AppCompatActivity {
         final String Snumer=getIntent().getStringExtra("nr");
         final String Sid=getIntent().getStringExtra("id");
         final String SZwrot=getIntent().getStringExtra("zwrot");
+        final String SNumer=getIntent().getStringExtra("numer");
 
 
         Odrzucona.setOnClickListener(new View.OnClickListener() {
@@ -188,6 +189,15 @@ public class KurierPackActivity extends AppCompatActivity {
         ulica.setText(Sulica);
         numer.setText(Snumer);
 
+numer.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel: "+numer.getText()));
+        startActivity(intent);
+    }
+});
+
 
         Czas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -280,6 +290,7 @@ public class KurierPackActivity extends AppCompatActivity {
                 MagazynInfo.put("Miesiac",Calendar.getInstance().get(Calendar.MONTH)+1);
                 MagazynInfo.put("Rok",Calendar.getInstance().get(Calendar.YEAR));
                 MagazynInfo.put("Godzina",Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+                MagazynInfo.put("NumerKlienta",SNumer);
 
 
                 df.set(MagazynInfo).addOnFailureListener(new OnFailureListener() {
@@ -331,19 +342,6 @@ public class KurierPackActivity extends AppCompatActivity {
             }
         });
 
-//        String loc= miasto.getText().toString()+" "+ulica.getText().toString()+" "+numer.getText().toString();
-//        Geocoder coder = new Geocoder(this);
-//        List<Address> address;
-//        try {
-//            address = coder.getFromLocationName(loc, 5);
-//            Address location = address.get(0);
-//            Double Lat=location.getLatitude();
-//            Double Long =location.getLongitude();
-//            x.setText(Lat.toString());
-//            y.setText(Long.toString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
 
     }
