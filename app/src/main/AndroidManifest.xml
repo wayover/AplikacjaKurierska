@@ -43,8 +43,6 @@
         <activity android:name=".Kurier.KurierActivity" />
         <activity android:name=".Admin.AdminActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".user.Kontakt" />
-        <activity android:name=".user.DodajPrzeylke" />
         <activity
             android:name=".login.Login"
             android:label="@string/app_name">

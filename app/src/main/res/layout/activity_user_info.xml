@@ -11,13 +11,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/makeMan"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bInfoUser"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bInfomKurier" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvInfoMail"
@@ -26,8 +26,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -37,8 +38,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoMail" />
 
     <TextView
@@ -48,8 +50,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoImie" />
 
     <TextView
@@ -59,8 +62,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoNazwisko" />
 
     <TextView
@@ -70,8 +74,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoRola" />
 
     <Button
@@ -79,26 +84,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/makeCour"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bInfoMan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfoTelefon" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bInfoUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/makeUser"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bInfoCofnij"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bInfoMan" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bInfoCofnij"
@@ -111,4 +116,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/mail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoMail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoMail" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Imie"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoImie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoImie" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Nazwisko"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoNazwisko"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoNazwisko" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:text="@string/Role"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoRola"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoRola" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        android:text="@string/nrTel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoTelefon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoTelefon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

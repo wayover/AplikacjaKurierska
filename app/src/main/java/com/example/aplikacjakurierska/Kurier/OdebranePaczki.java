@@ -171,7 +171,7 @@ public class OdebranePaczki extends AppCompatActivity{
 
                         }
 
-                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, paczki);
+                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.row, paczki);
                         lvPaczki.setAdapter(arrayAdapter);
                     }
                 });

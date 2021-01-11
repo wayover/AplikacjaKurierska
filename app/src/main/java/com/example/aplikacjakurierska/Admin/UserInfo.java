@@ -61,20 +61,23 @@ public class UserInfo extends AppCompatActivity {
         mail.setText(getIntent().getStringExtra("mail"));
         imie.setText(getIntent().getStringExtra("imie"));
         nazwisko.setText(getIntent().getStringExtra("nazwisko"));
-        rola.setText(getIntent().getStringExtra("rola"));
-        if(rola.getText().equals("0")){//user
+        if(getIntent().getStringExtra("rola").equals("0")){//user
             bMana.setVisibility(View.VISIBLE);
             bKurier.setVisibility(View.VISIBLE);
-        }else if(rola.getText().equals("1")){//admin
+            rola.setText(R.string.User);
+        }else if(getIntent().getStringExtra("rola").equals("1")){//admin
             bMana.setVisibility(View.VISIBLE);
             bKurier.setVisibility(View.VISIBLE);
             bUser.setVisibility(View.VISIBLE);
-        }else if(rola.getText().equals("2")){//courier
+            rola.setText(R.string.Admin);
+        }else if(getIntent().getStringExtra("rola").equals("2")){//courier
             bMana.setVisibility(View.VISIBLE);
             bUser.setVisibility(View.VISIBLE);
-        }else if(rola.getText().equals("3")){//managment
+            rola.setText(R.string.Courier);
+        }else if(getIntent().getStringExtra("rola").equals("3")){//manager
             bKurier.setVisibility(View.VISIBLE);
             bUser.setVisibility(View.VISIBLE);
+            rola.setText(R.string.Manager);
         }
         telefon.setText(getIntent().getStringExtra("telefon"));
 

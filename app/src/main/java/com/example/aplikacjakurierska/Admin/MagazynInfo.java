@@ -38,13 +38,13 @@ public class MagazynInfo extends AppCompatActivity {
 
         tvMiasto.setText(getIntent().getStringExtra("Miasto"));
         tvUlica.setText(getIntent().getStringExtra("Ulica"));
-        tvNumer.setText(getIntent().getStringExtra("Id"));
+        tvNumer.setText(getIntent().getStringExtra("Numer"));
 
 
         bcofnij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AdminActivity.class));
+                startActivity(new Intent(getApplicationContext(),SprawdzMagazyn.class));
             }
         });
 

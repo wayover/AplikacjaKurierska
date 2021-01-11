@@ -95,4 +95,9 @@
     <string name="Reportednondelivery">Reported non-delivery</string>
     <string name="Deliverytime">Delivery time</string>
     <string name="ClientPhont">Client phone</string>
+    <string name="Role">Role</string>
+    <string name="User">User</string>
+    <string name="Courier">Courier</string>
+    <string name="Manager" translatable="false">Manager</string>
+    <string name="Admin" translatable="false">Admin</string>
 </resources>

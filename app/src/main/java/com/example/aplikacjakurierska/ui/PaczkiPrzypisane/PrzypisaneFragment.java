@@ -76,7 +76,7 @@ public class PrzypisaneFragment extends Fragment {
                 }else{
                     Toast.makeText(root.getContext(),task.getException().toString(),Toast.LENGTH_LONG).show();
                 }
-                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(root.getContext(),android.R.layout.simple_list_item_1,infolist);
+                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(root.getContext(),R.layout.row,infolist);
                 lvListaPaczek.setAdapter(arrayAdapter);
 
 

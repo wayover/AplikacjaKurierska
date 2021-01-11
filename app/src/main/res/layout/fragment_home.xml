@@ -9,43 +9,91 @@
     tools:context=".ui.home.HomeFragment">
 
     <Button
-        android:id="@+id/bZnajdzPrzes"
+        android:id="@+id/bWyloguj"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="60dp"
         android:layout_weight="1"
-        android:text="@string/findpack"
+        android:text="@string/Wyloguj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/dodajPrzes"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bKontakt"
+        android:id="@+id/bDodajZnajdz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_weight="1"
-        android:text="@string/Contact"
+        android:text="@string/find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bZnajdzPrzes" />
+        app:layout_constraintTop_toBottomOf="@+id/etDodajTelefon" />
 
-    <Button
-        android:id="@+id/bWyloguj"
+    <EditText
+        android:id="@+id/etDodajNrPrzesylki"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/nrPrzesylki"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView333" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/nrPrzesylki"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etDodajNrPrzesylki"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etDodajNrPrzesylki" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/nrTel"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etDodajTelefon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etDodajTelefon" />
+
+    <EditText
+        android:id="@+id/etDodajTelefon"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_weight="1"
-        android:text="@string/Wyloguj"
-        app:layout_constraintEnd_toEndOf="@+id/bKontakt"
-        app:layout_constraintStart_toStartOf="@+id/bKontakt"
-        app:layout_constraintTop_toBottomOf="@+id/bKontakt" />
+        android:ems="10"
+        android:hint="@string/nrTel"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="@+id/etDodajNrPrzesylki"
+        app:layout_constraintStart_toStartOf="@+id/etDodajNrPrzesylki"
+        app:layout_constraintTop_toBottomOf="@+id/etDodajNrPrzesylki" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

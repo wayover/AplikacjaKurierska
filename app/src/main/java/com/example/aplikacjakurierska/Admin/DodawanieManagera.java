@@ -81,7 +81,7 @@ public class DodawanieManagera extends AppCompatActivity {
                 }
 
 
-                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,userlist);
+                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),R.layout.row,userlist);
                 lvUserList.setAdapter(arrayAdapter);
 
                 lvUserList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

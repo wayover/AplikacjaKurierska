@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aplikacjakurierska.Kurier.OdebranePaczki;
+import com.example.aplikacjakurierska.MainActivity;
 import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.ui.PaczkiPrzypisane.PrzypisaneFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -152,7 +153,7 @@ public class UserPrzypisaneInfo extends AppCompatActivity {
         cofnij.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PrzypisaneFragment.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });

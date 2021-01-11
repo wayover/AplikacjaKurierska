@@ -99,7 +99,7 @@ public class KurierOdrzuconeZlyAdresInfo extends AppCompatActivity {
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                             Map<String, Object> map = new HashMap<>();
-                            map.put("Dostarczona", "0");
+                            map.put("Dostarczona", "ZwroconaDoMagazynu");
                             map.put("Miasto", listaMagazyn.get(a).getMiasto());
                             map.put("Ulica", listaMagazyn.get(a).getUlica());
                             map.put("NrDomu", listaMagazyn.get(a).getNumer());
@@ -118,7 +118,7 @@ public class KurierOdrzuconeZlyAdresInfo extends AppCompatActivity {
 
                                 }
                             });
-                            Intent intent = new Intent(getApplicationContext(), KurierNieodebrane.class);
+                            Intent intent = new Intent(getApplicationContext(), KurierActivity.class);
                             startActivity(intent);
                         }
                     });

@@ -31,7 +31,7 @@
     <string name="DelMan">Usuń managera</string>
     <string name="makeCour">Dodaj uprawneinia kuriera</string>
     <string name="makeMan">Dodaj uprawnienia managera</string>
-    <string name="makeUser">Unuś uprawnienia</string>
+    <string name="makeUser">Usuń uprawnienia</string>
     <string name="mailDFi">Mail nie został znaleziony</string>
     <string name="AddPack">Dodaj paczkę</string>
     <string name="Customermail">Mail Klienta</string>
@@ -90,4 +90,7 @@
     <string name="Reportednondelivery">Zgłoszone niedostarczenie</string>
     <string name="Deliverytime">Czas dostarczenia</string>
     <string name="ClientPhont">Numer Klienta</string>
+    <string name="Role">Rola</string>
+    <string name="User">Użytkownik</string>
+    <string name="Courier">Kurier</string>
 </resources>

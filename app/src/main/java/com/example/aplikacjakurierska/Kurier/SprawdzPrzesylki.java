@@ -111,7 +111,7 @@ public class SprawdzPrzesylki extends AppCompatActivity {
                                 for (MagazynClass i : magazyny) {
                                     infolist.add(i.getMiasto()+" "+i.getUlica()+" "+i.getNumer());
                                 }
-                                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,infolist);
+                                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),R.layout.row,infolist);
                                 lvMagazyny.setAdapter(arrayAdapter);
                             }
                         });

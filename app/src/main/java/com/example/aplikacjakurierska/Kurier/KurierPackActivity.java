@@ -189,14 +189,14 @@ public class KurierPackActivity extends AppCompatActivity {
         ulica.setText(Sulica);
         numer.setText(Snumer);
 
-numer.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel: "+numer.getText()));
-        startActivity(intent);
-    }
-});
+        numer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel: "+numer.getText()));
+                startActivity(intent);
+            }
+        });
 
 
         Czas.setOnClickListener(new View.OnClickListener() {

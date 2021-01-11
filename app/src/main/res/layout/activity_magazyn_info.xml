@@ -14,8 +14,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,20 +27,22 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/tvMagazynMiasto" />
 
     <TextView
         android:id="@+id/tvMagazynNumer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView38"
         app:layout_constraintTop_toBottomOf="@+id/tvMagazynUlica" />
 
     <Button
@@ -65,4 +68,37 @@
         app:layout_constraintBottom_toTopOf="@+id/bMagazynInfoCofnij"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/City"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMagazynMiasto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMagazynMiasto" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Street"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMagazynUlica"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMagazynUlica" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Number"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMagazynNumer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMagazynNumer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

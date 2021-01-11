@@ -70,7 +70,7 @@ public class SprawdzMagazyn extends AppCompatActivity {
                 }else{
                     Toast.makeText(getApplicationContext(),task.getException().toString(),Toast.LENGTH_LONG).show();
                 }
-                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,infolist);
+                ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(getApplicationContext(),R.layout.row,infolist);
                 lvMagazyn.setAdapter(arrayAdapter);
 
 

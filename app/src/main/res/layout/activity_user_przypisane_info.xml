@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/Estimateddeliverytime"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +24,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView32"
@@ -35,6 +37,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/CourierPhone"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
@@ -45,6 +48,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView34"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView32"
@@ -95,6 +99,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="Godzina Dostarczenia"
+        android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView34" />
@@ -104,6 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/tvGodzinaDostarczenia"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,6 +124,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:text="@string/PackNDeliver"
+        android:textSize="18sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,6 +137,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         android:text="123654987"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"

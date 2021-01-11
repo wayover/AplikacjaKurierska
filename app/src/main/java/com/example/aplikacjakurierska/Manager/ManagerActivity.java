@@ -2,9 +2,6 @@ package com.example.aplikacjakurierska.Manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
-import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ManagerActivity extends AppCompatActivity {

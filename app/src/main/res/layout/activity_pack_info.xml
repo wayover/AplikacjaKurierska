@@ -14,8 +14,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoImie" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,8 +40,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoId" />
 
     <TextView
@@ -50,8 +53,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoNazwisko" />
 
     <TextView
@@ -62,8 +66,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoMail" />
 
     <TextView
@@ -74,8 +79,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoKod" />
 
     <TextView
@@ -86,8 +92,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoMiasto" />
 
     <TextView
@@ -98,8 +105,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoUlica" />
 
     <TextView
@@ -110,8 +118,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoNrDomu" />
 
     <TextView
@@ -122,8 +131,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoNrMieszkania" />
 
     <Button
@@ -158,6 +168,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoTelefon" />
@@ -170,7 +181,107 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInfoIdKlienta" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Imie"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoImie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoImie" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Nazwisko"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoNazwisko"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoNazwisko" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/mail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoMail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoMail" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/ZipCode"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoKod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoKod" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/City"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoMiasto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoMiasto" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Street"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoUlica"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoUlica" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Housenumber"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoNrDomu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoNrDomu" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/Flatnumber"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoNrMieszkania"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoNrMieszkania" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/nrTel"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInfoTelefon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvInfoTelefon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

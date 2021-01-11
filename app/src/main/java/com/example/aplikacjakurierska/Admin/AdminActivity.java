@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.aplikacjakurierska.R;
 import com.example.aplikacjakurierska.login.Login;
-import com.example.aplikacjakurierska.user.DodajPrzeylke;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminActivity extends AppCompatActivity {
