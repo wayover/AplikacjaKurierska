@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Courier Application</string>
+    <string name="app_name">My Courier</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard" translatable="false">Dashboard</string>
     <string name="title_notifications" translatable="false">Notifications</string>

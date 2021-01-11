@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Aplikacja Kurierska</string>
+    <string name="app_name">Mój kurier</string>
     <string name="title_home">Strona główna</string>
     <string name="findpack">Znajdź przesyłkę</string>
     <string name="Contact">Kontakt</string>
