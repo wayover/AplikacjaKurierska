@@ -27,7 +27,7 @@
     <string name="ForgotPas">Zapomniałem hasła</string>
     <string name="ResetPas">Resetuj hasło</string>
     <string name="PasSend">Hasło zostało wysłane na maila</string>
-    <string name="DodMan">Dodaj managera</string>
+    <string name="DodMan">Lista użytkowników</string>
     <string name="DelMan">Usuń managera</string>
     <string name="makeCour">Dodaj uprawneinia kuriera</string>
     <string name="makeMan">Dodaj uprawnienia managera</string>

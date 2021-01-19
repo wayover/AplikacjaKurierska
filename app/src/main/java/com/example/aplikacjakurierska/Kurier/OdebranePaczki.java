@@ -48,6 +48,7 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class OdebranePaczki extends AppCompatActivity{
 
@@ -61,12 +62,19 @@ public class OdebranePaczki extends AppCompatActivity{
         }
     }
 
-    ;
+
 
     class Pack {
         public Location loc;
         public Paczka paczka;
     }
+
+    class ptopodl{
+        public String droga;
+        public float odl;
+    }
+
+
 
     Button Cofnij, Trasa;
     ListView lvPaczki;
@@ -76,17 +84,17 @@ public class OdebranePaczki extends AppCompatActivity{
     Double MyLat, MyLong;
     ArrayList<String> paczki;
     ArrayList<Paczka> packlist;
+    ArrayList<String> sortpacklist;
     ArrayList<Data> dystans;
     ArrayList<Pack> packs;
+    ArrayList<String>liczby;
+    ArrayList<ptopodl>sumaodleglosci;
     TextView test;
-
-
 
 
     FusedLocationProviderClient fusedLocationClient;
 
 
-   // @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,9 +105,12 @@ public class OdebranePaczki extends AppCompatActivity{
         lvPaczki = findViewById(R.id.lvOdebrane);
         paczki = new ArrayList<>();
         packlist = new ArrayList<>();
+        sortpacklist = new ArrayList<>();
         dystans = new ArrayList<>();
         packs = new ArrayList<>();
+        sumaodleglosci = new ArrayList<>();
         test = findViewById(R.id.tvTest);
+
 
         Trasa.setVisibility(View.INVISIBLE);
 
@@ -125,6 +136,7 @@ public class OdebranePaczki extends AppCompatActivity{
                     MyLong=location.getLongitude();
                     MyLat=location.getLatitude();
                     test.setText(MyLat+" " +MyLong);
+                    Trasa.setVisibility(View.VISIBLE);
                 }
                 else{
                     test.setText("null");
@@ -207,15 +219,18 @@ public class OdebranePaczki extends AppCompatActivity{
             }
         });
 
-
         Trasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                    packs = new ArrayList<>();
+                    dystans= new ArrayList<>();
                     Pack pa=new Pack();
                     Location locc = new Location("");
                     locc.setLatitude(MyLat);
+                    locc.setLatitude(51.75);
                     locc.setLongitude(MyLong);
+                    locc.setLongitude(19.44);
                     pa.loc=locc;
                     pa.paczka=new Paczka("Moja Lokalizacja");
                     packs.add(pa);
@@ -223,7 +238,7 @@ public class OdebranePaczki extends AppCompatActivity{
                     Double Lat = null;
                     Double Long = null;
                     Pack pack = new Pack();
-                        String loc = packlist.get(i).getMiasto() + " " + packlist.get(i).getUlica() + " " + packlist.get(1).getNrdomu();
+                        String loc = packlist.get(i).getMiasto() + " " + packlist.get(i).getUlica() + " " + packlist.get(i).getNrdomu();
                         Geocoder coder = new Geocoder(getApplicationContext());
                         List<Address> address;
                         try {
@@ -244,45 +259,102 @@ public class OdebranePaczki extends AppCompatActivity{
                     packs.add(pack);
                 }
 
+                float[][]odleglosci= new float[packs.size()][packs.size()];
                 for (int i = 0; i < packs.size(); i++) {
-                    for (int j = packs.size() - 1; j > i; j--) {
-
-                        Data data = new Data();
-                        data.paczka1 = packs.get(i).paczka;
-                        data.paczka2 = packs.get(j).paczka;
-                        float distance = packs.get(i).loc.distanceTo(packs.get(j).loc);
-                        data.distance = distance;
-                        dystans.add(data);
-
+                    for (int j = 0; j<packs.size(); j++) {
+                        if(j!=i) {
+                            Data data = new Data();
+                            data.paczka1 = packs.get(i).paczka;
+                            data.paczka2 = packs.get(j).paczka;
+                            float distance = packs.get(i).loc.distanceTo(packs.get(j).loc);
+                            data.distance = distance;
+                            odleglosci[i][j]=distance;
+                            dystans.add(data);
+                        }
                     }
                 }
 
 
-                String tmp = "";
-                for (int i = 0; i < dystans.size(); i++) {
-                    tmp += dystans.get(i).paczka1.getMiasto() + " - " + dystans.get(i).paczka2.getMiasto() + " = " + dystans.get(i).distance + '\n';
+
+                liczby=new ArrayList<>();
+                String tmp2 = "";
+
+                for(int i=1;i<packs.size();i++){
+                    tmp2+=i;
+                }
+                permute(tmp2,0,tmp2.length()-1);
+
+                String droga="";
+                float odleg=-1;
+                sumaodleglosci= new ArrayList<>();
+                for(int i=0;i<liczby.size();i++){
+                    float odl=0;
+                    for(int j=0;j<liczby.get(i).length()-1;j++){
+                        String a=liczby.get(i);
+                        int b=Integer.parseInt(a.substring(j,j+1));
+                        int c=Integer.parseInt(a.substring(j+1,j+2));
+                        odl+=odleglosci[b][c];
+                    }
+
+
+                    if(odleg>odl ||odleg==-1){
+                        odleg=odl;
+                        droga=liczby.get(i);
+                    }
+
                 }
 
-                test.setText(tmp);
+
+
+
+
+
+                sortpacklist=new ArrayList<>();
+                for(int i=1;i<droga.length();i++){
+                    int a=Integer.parseInt(droga.substring(i,i+1));
+                    sortpacklist.add(packlist.get(a-1).getMiasto()+" "+packlist.get(a-1).getUlica()+" "+packlist.get(a-1).getNrdomu());
+                }
+
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.row, sortpacklist);
+                lvPaczki.setAdapter(arrayAdapter);
             }
         });
     }
 
 
+    public String swap(String a, int i, int j) {
+        char temp;
+        char[] charArray = a.toCharArray();
+        temp = charArray[i];
+        charArray[i] = charArray[j];
+        charArray[j] = temp;
+        return String.valueOf(charArray);
+    }
 
 
+    private void permute(String str, int l, int r) {
+
+        if (l == r) {
+            liczby.add("0"+str);
+        }
+        else {
+            for (int i = l; i <= r; i++) {
+                str = swap(str, l, i);
+                permute(str, l + 1, r);
+                str = swap(str, l, i);
+            }
+        }
 
 
+    }
 
 
     private class MyLocationListener implements LocationListener {
 
         @Override
         public void onLocationChanged(Location loc) {
-            test.setText("");
             MyLat=loc.getLatitude();
             MyLong=loc.getLongitude();
-            test.setText(MyLat+" " +MyLong);
             Trasa.setVisibility(View.VISIBLE);
         }
 
